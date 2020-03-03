@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+strongsalt_strongdoc_python_sdk.egg-info/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -70,6 +71,8 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/_static
+docs/_templates
 
 # PyBuilder
 target/
@@ -127,3 +130,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# IntelliJ
+.idea/
+
+# VSCode
+.vscode/
