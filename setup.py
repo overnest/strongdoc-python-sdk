@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="strongsalt-strongdoc-python-sdk",
-    version=__version__
+    version=__version__,
     author="StrongDoc",
     author_email="info@strongsalt.com",
     description="The StrongDoc Python SDK for interacting with the StrongDoc API.",
