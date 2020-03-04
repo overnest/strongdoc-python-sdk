@@ -1,4 +1,5 @@
 import setuptools
+from strongdoc import __version__
 
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
@@ -8,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="strongsalt-strongdoc-python-sdk",
-    version="0.0.2",
+    version=__version__
     author="StrongDoc",
     author_email="info@strongsalt.com",
     description="The StrongDoc Python SDK for interacting with the StrongDoc API.",
