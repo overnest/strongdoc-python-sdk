@@ -20,6 +20,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=[
+        "pathlib",
         "grpcio",
         "protobuf",
         "six"
@@ -32,4 +33,5 @@ setuptools.setup(
         "Operating System :: MacOS :: MacOS X",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    python_requires='>=3.6',
 )

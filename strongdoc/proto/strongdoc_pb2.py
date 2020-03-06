@@ -13,11 +13,11 @@ _sym_db = _symbol_database.Default()
 
 from strongdoc.proto.google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from strongdoc.proto.protoc_gen_swagger.options import annotations_pb2 as protoc__gen__swagger_dot_options_dot_annotations__pb2
-import strongdoc.proto.document_pb2 as document__pb2
-import strongdoc.proto.documentNoStore_pb2 as documentNoStore__pb2
-import strongdoc.proto.search_pb2 as search__pb2
-import strongdoc.proto.accounts_pb2 as accounts__pb2
-import strongdoc.proto.billing_pb2 as billing__pb2
+import document_pb2 as document__pb2
+import documentNoStore_pb2 as documentNoStore__pb2
+import search_pb2 as search__pb2
+import accounts_pb2 as accounts__pb2
+import billing_pb2 as billing__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

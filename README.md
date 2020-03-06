@@ -11,7 +11,7 @@ Website: [strongsalt.com](https://www.strongsalt.com "Strongsalt website")
 
 The API is available as a Python Package. You must first do:
 
-`pip install strongsalt-strongdoc-python-sdk`
+`pip3 install strongsalt-strongdoc-python-sdk`
 
 Then, import it into your files at the top of your files:
 
