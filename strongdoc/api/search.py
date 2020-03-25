@@ -21,7 +21,7 @@ def search(token, query):
     :raises grpc.RpcError:
         Raised by the gRPC library to indicate non-OK-status RPC termination.
 
-    returns:
+    :returns:
         The hit list of the search.
     :rtype:
         list(DocumentResult)
