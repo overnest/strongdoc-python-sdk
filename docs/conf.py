@@ -46,6 +46,7 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -82,7 +83,8 @@ pygments_style = 'sphinx'
 #
 ##html_theme = 'alabaster'
 ##html_theme = 'agogo'
-html_theme = 'nature'
+##html_theme = 'nature'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -146,6 +148,10 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+
+autodoc_member_order: 'bysource'
+
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # -- Options for todo extension ----------------------------------------------
 

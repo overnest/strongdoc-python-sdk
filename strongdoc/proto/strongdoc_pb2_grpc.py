@@ -6,7 +6,6 @@ import billing_pb2 as billing__pb2
 import documentNoStore_pb2 as documentNoStore__pb2
 import document_pb2 as document__pb2
 import search_pb2 as search__pb2
-import strongdoc_pb2 as strongdoc__pb2
 
 
 class StrongDocServiceStub(object):
@@ -21,48 +20,48 @@ class StrongDocServiceStub(object):
     """
     self.RegisterOrganization = channel.unary_unary(
         '/proto.StrongDocService/RegisterOrganization',
-        request_serializer=accounts__pb2.RegisterOrganizationRequest.SerializeToString,
-        response_deserializer=accounts__pb2.RegisterOrganizationResponse.FromString,
+        request_serializer=accounts__pb2.RegisterOrganizationReq.SerializeToString,
+        response_deserializer=accounts__pb2.RegisterOrganizationResp.FromString,
         )
     self.RemoveOrganization = channel.unary_unary(
         '/proto.StrongDocService/RemoveOrganization',
-        request_serializer=accounts__pb2.RemoveOrganizationRequest.SerializeToString,
-        response_deserializer=accounts__pb2.RemoveOrganizationResponse.FromString,
+        request_serializer=accounts__pb2.RemoveOrganizationReq.SerializeToString,
+        response_deserializer=accounts__pb2.RemoveOrganizationResp.FromString,
         )
     self.RegisterUser = channel.unary_unary(
         '/proto.StrongDocService/RegisterUser',
-        request_serializer=accounts__pb2.RegisterUserRequest.SerializeToString,
-        response_deserializer=accounts__pb2.RegisterUserResponse.FromString,
+        request_serializer=accounts__pb2.RegisterUserReq.SerializeToString,
+        response_deserializer=accounts__pb2.RegisterUserResp.FromString,
         )
     self.ListUsers = channel.unary_unary(
         '/proto.StrongDocService/ListUsers',
-        request_serializer=accounts__pb2.ListUsersRequest.SerializeToString,
-        response_deserializer=accounts__pb2.ListUsersResponse.FromString,
+        request_serializer=accounts__pb2.ListUsersReq.SerializeToString,
+        response_deserializer=accounts__pb2.ListUsersResp.FromString,
         )
     self.RemoveUser = channel.unary_unary(
         '/proto.StrongDocService/RemoveUser',
-        request_serializer=accounts__pb2.RemoveUserRequest.SerializeToString,
-        response_deserializer=accounts__pb2.RemoveUserResponse.FromString,
+        request_serializer=accounts__pb2.RemoveUserReq.SerializeToString,
+        response_deserializer=accounts__pb2.RemoveUserResp.FromString,
         )
     self.PromoteUser = channel.unary_unary(
         '/proto.StrongDocService/PromoteUser',
-        request_serializer=accounts__pb2.PromoteUserRequest.SerializeToString,
-        response_deserializer=accounts__pb2.PromoteUserResponse.FromString,
+        request_serializer=accounts__pb2.PromoteUserReq.SerializeToString,
+        response_deserializer=accounts__pb2.PromoteUserResp.FromString,
         )
     self.DemoteUser = channel.unary_unary(
         '/proto.StrongDocService/DemoteUser',
-        request_serializer=accounts__pb2.DemoteUserRequest.SerializeToString,
-        response_deserializer=accounts__pb2.DemoteUserResponse.FromString,
+        request_serializer=accounts__pb2.DemoteUserReq.SerializeToString,
+        response_deserializer=accounts__pb2.DemoteUserResp.FromString,
         )
     self.ListDocuments = channel.unary_unary(
         '/proto.StrongDocService/ListDocuments',
-        request_serializer=document__pb2.ListDocumentsRequest.SerializeToString,
-        response_deserializer=document__pb2.ListDocumentsResponse.FromString,
+        request_serializer=document__pb2.ListDocumentsReq.SerializeToString,
+        response_deserializer=document__pb2.ListDocumentsResp.FromString,
         )
     self.RemoveDocument = channel.unary_unary(
         '/proto.StrongDocService/RemoveDocument',
-        request_serializer=document__pb2.RemoveDocumentRequest.SerializeToString,
-        response_deserializer=document__pb2.RemoveDocumentResponse.FromString,
+        request_serializer=document__pb2.RemoveDocumentReq.SerializeToString,
+        response_deserializer=document__pb2.RemoveDocumentResp.FromString,
         )
     self.UploadDocumentStream = channel.stream_unary(
         '/proto.StrongDocService/UploadDocumentStream',
@@ -106,43 +105,43 @@ class StrongDocServiceStub(object):
         )
     self.ShareDocument = channel.unary_unary(
         '/proto.StrongDocService/ShareDocument',
-        request_serializer=document__pb2.ShareDocumentRequest.SerializeToString,
-        response_deserializer=document__pb2.ShareDocumentResponse.FromString,
+        request_serializer=document__pb2.ShareDocumentReq.SerializeToString,
+        response_deserializer=document__pb2.ShareDocumentResp.FromString,
         )
     self.UnshareDocument = channel.unary_unary(
         '/proto.StrongDocService/UnshareDocument',
-        request_serializer=document__pb2.UnshareDocumentRequest.SerializeToString,
-        response_deserializer=document__pb2.UnshareDocumentResponse.FromString,
+        request_serializer=document__pb2.UnshareDocumentReq.SerializeToString,
+        response_deserializer=document__pb2.UnshareDocumentResp.FromString,
         )
     self.Login = channel.unary_unary(
         '/proto.StrongDocService/Login',
-        request_serializer=accounts__pb2.LoginRequest.SerializeToString,
-        response_deserializer=accounts__pb2.LoginResponse.FromString,
+        request_serializer=accounts__pb2.LoginReq.SerializeToString,
+        response_deserializer=accounts__pb2.LoginResp.FromString,
         )
     self.Logout = channel.unary_unary(
         '/proto.StrongDocService/Logout',
-        request_serializer=accounts__pb2.LogoutRequest.SerializeToString,
-        response_deserializer=accounts__pb2.LogoutResponse.FromString,
+        request_serializer=accounts__pb2.LogoutReq.SerializeToString,
+        response_deserializer=accounts__pb2.LogoutResp.FromString,
         )
     self.Search = channel.unary_unary(
         '/proto.StrongDocService/Search',
-        request_serializer=search__pb2.SearchRequest.SerializeToString,
-        response_deserializer=search__pb2.SearchResponse.FromString,
+        request_serializer=search__pb2.SearchReq.SerializeToString,
+        response_deserializer=search__pb2.SearchResp.FromString,
         )
     self.AddSharableOrg = channel.unary_unary(
         '/proto.StrongDocService/AddSharableOrg',
-        request_serializer=accounts__pb2.AddSharableOrgRequest.SerializeToString,
-        response_deserializer=accounts__pb2.AddSharableOrgResponse.FromString,
+        request_serializer=accounts__pb2.AddSharableOrgReq.SerializeToString,
+        response_deserializer=accounts__pb2.AddSharableOrgResp.FromString,
         )
     self.RemoveSharableOrg = channel.unary_unary(
         '/proto.StrongDocService/RemoveSharableOrg',
-        request_serializer=accounts__pb2.RemoveSharableOrgRequest.SerializeToString,
-        response_deserializer=accounts__pb2.RemoveSharableOrgResponse.FromString,
+        request_serializer=accounts__pb2.RemoveSharableOrgReq.SerializeToString,
+        response_deserializer=accounts__pb2.RemoveSharableOrgResp.FromString,
         )
     self.SetMultiLevelSharing = channel.unary_unary(
         '/proto.StrongDocService/SetMultiLevelSharing',
-        request_serializer=accounts__pb2.SetMultiLevelSharingRequest.SerializeToString,
-        response_deserializer=accounts__pb2.SetMultiLevelSharingResponse.FromString,
+        request_serializer=accounts__pb2.SetMultiLevelSharingReq.SerializeToString,
+        response_deserializer=accounts__pb2.SetMultiLevelSharingResp.FromString,
         )
     self.GetBillingDetails = channel.unary_unary(
         '/proto.StrongDocService/GetBillingDetails',
@@ -159,15 +158,10 @@ class StrongDocServiceStub(object):
         request_serializer=billing__pb2.SetNextBillingFrequencyReq.SerializeToString,
         response_deserializer=billing__pb2.SetNextBillingFrequencyResp.FromString,
         )
-    self.GetConfiguration = channel.unary_unary(
-        '/proto.StrongDocService/GetConfiguration',
-        request_serializer=strongdoc__pb2.GetConfigurationReq.SerializeToString,
-        response_deserializer=strongdoc__pb2.GetConfigurationResp.FromString,
-        )
-    self.ProcessSubscriptionEvent = channel.unary_unary(
-        '/proto.StrongDocService/ProcessSubscriptionEvent',
-        request_serializer=billing__pb2.ProcessSubscriptionEventReq.SerializeToString,
-        response_deserializer=billing__pb2.ProcessSubscriptionEventResp.FromString,
+    self.GetAccountInfo = channel.unary_unary(
+        '/proto.StrongDocService/GetAccountInfo',
+        request_serializer=accounts__pb2.GetAccountInfoReq.SerializeToString,
+        response_deserializer=accounts__pb2.GetAccountInfoResp.FromString,
         )
 
 
@@ -210,7 +204,7 @@ class StrongDocServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListUsers(self, request, context):
-    """rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse) {
+    """rpc GetUserInfo(GetUserInfoReq) returns (GetUserInfoResp) {
     option (google.api.http) = {
     post: "/v1/account/getuserinfo"
     body: "*"
@@ -236,7 +230,7 @@ class StrongDocServiceServicer(object):
   def RemoveUser(self, request, context):
     """Remove user from organization
 
-    Removes the user from the organization. The users documents still exists, 
+    Removes the user from the organization. The users documents still exists,
     but belong to the organization, only accessible by organization admin.
 
     Requires administrator privilege.
@@ -292,8 +286,8 @@ class StrongDocServiceServicer(object):
 
     User can upload document to the organization for storage
 
-    Requires Login 
-    This is not available through gRPC REST gateway, 
+    Requires Login
+    This is not available through gRPC REST gateway,
     since REST api does not support streaming protocol
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -305,7 +299,7 @@ class StrongDocServiceServicer(object):
 
     User can upload document to the organization for storage
 
-    Requires Login 
+    Requires Login
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -316,8 +310,8 @@ class StrongDocServiceServicer(object):
 
     User can download the documents
 
-    Requires Login 
-    This is not available through gRPC REST gateway, 
+    Requires Login
+    This is not available through gRPC REST gateway,
     since REST api does not support streaming protocol
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -329,7 +323,7 @@ class StrongDocServiceServicer(object):
 
     User can download the documents
 
-    Requires Login 
+    Requires Login
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -339,8 +333,8 @@ class StrongDocServiceServicer(object):
     """Encrypt document stream encrypts the document and returns the ciphertext
     back to the user without storing it.
 
-    Requires Login 
-    This is not available through gRPC REST gateway, 
+    Requires Login
+    This is not available through gRPC REST gateway,
     since REST api does not support streaming protocol
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -351,18 +345,18 @@ class StrongDocServiceServicer(object):
     """Encrypt document encrypts the document and returns the ciphertext
     back to the user without storing it.
 
-    Requires Login 
+    Requires Login
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def DecryptDocumentStream(self, request_iterator, context):
-    """Decrypt document stream decrypts the ciphertext passed in and returns 
+    """Decrypt document stream decrypts the ciphertext passed in and returns
     decrypted plain text back to the user without storing it
 
-    Requires Login 
-    This is not available through gRPC REST gateway, 
+    Requires Login
+    This is not available through gRPC REST gateway,
     since REST api does not support streaming protocol
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -370,7 +364,7 @@ class StrongDocServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def DecryptDocument(self, request, context):
-    """Decrypt document decrypts the ciphertext passed in and returns 
+    """Decrypt document decrypts the ciphertext passed in and returns
     decrypted plain text back to the user without storing it
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -399,7 +393,7 @@ class StrongDocServiceServicer(object):
     """Obtain an authentication token to be used with other APIs
 
     An authentication token will be returned after user has been validated
-    The returned token will be used as a Bearer Token and need to be set in 
+    The returned token will be used as a Bearer Token and need to be set in
     the request header
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -486,20 +480,10 @@ class StrongDocServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetConfiguration(self, request, context):
-    """Show current server configuration
+  def GetAccountInfo(self, request, context):
+    """Obtain information about the account
 
-    Requires Administrator privilege. Only an administrator can see server configuration
     Requires Login
-    """
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def ProcessSubscriptionEvent(self, request, context):
-    """Process subscription-related event
-
-    Designed to be called only by third-party services (like online payments provider)
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -510,48 +494,48 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'RegisterOrganization': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterOrganization,
-          request_deserializer=accounts__pb2.RegisterOrganizationRequest.FromString,
-          response_serializer=accounts__pb2.RegisterOrganizationResponse.SerializeToString,
+          request_deserializer=accounts__pb2.RegisterOrganizationReq.FromString,
+          response_serializer=accounts__pb2.RegisterOrganizationResp.SerializeToString,
       ),
       'RemoveOrganization': grpc.unary_unary_rpc_method_handler(
           servicer.RemoveOrganization,
-          request_deserializer=accounts__pb2.RemoveOrganizationRequest.FromString,
-          response_serializer=accounts__pb2.RemoveOrganizationResponse.SerializeToString,
+          request_deserializer=accounts__pb2.RemoveOrganizationReq.FromString,
+          response_serializer=accounts__pb2.RemoveOrganizationResp.SerializeToString,
       ),
       'RegisterUser': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterUser,
-          request_deserializer=accounts__pb2.RegisterUserRequest.FromString,
-          response_serializer=accounts__pb2.RegisterUserResponse.SerializeToString,
+          request_deserializer=accounts__pb2.RegisterUserReq.FromString,
+          response_serializer=accounts__pb2.RegisterUserResp.SerializeToString,
       ),
       'ListUsers': grpc.unary_unary_rpc_method_handler(
           servicer.ListUsers,
-          request_deserializer=accounts__pb2.ListUsersRequest.FromString,
-          response_serializer=accounts__pb2.ListUsersResponse.SerializeToString,
+          request_deserializer=accounts__pb2.ListUsersReq.FromString,
+          response_serializer=accounts__pb2.ListUsersResp.SerializeToString,
       ),
       'RemoveUser': grpc.unary_unary_rpc_method_handler(
           servicer.RemoveUser,
-          request_deserializer=accounts__pb2.RemoveUserRequest.FromString,
-          response_serializer=accounts__pb2.RemoveUserResponse.SerializeToString,
+          request_deserializer=accounts__pb2.RemoveUserReq.FromString,
+          response_serializer=accounts__pb2.RemoveUserResp.SerializeToString,
       ),
       'PromoteUser': grpc.unary_unary_rpc_method_handler(
           servicer.PromoteUser,
-          request_deserializer=accounts__pb2.PromoteUserRequest.FromString,
-          response_serializer=accounts__pb2.PromoteUserResponse.SerializeToString,
+          request_deserializer=accounts__pb2.PromoteUserReq.FromString,
+          response_serializer=accounts__pb2.PromoteUserResp.SerializeToString,
       ),
       'DemoteUser': grpc.unary_unary_rpc_method_handler(
           servicer.DemoteUser,
-          request_deserializer=accounts__pb2.DemoteUserRequest.FromString,
-          response_serializer=accounts__pb2.DemoteUserResponse.SerializeToString,
+          request_deserializer=accounts__pb2.DemoteUserReq.FromString,
+          response_serializer=accounts__pb2.DemoteUserResp.SerializeToString,
       ),
       'ListDocuments': grpc.unary_unary_rpc_method_handler(
           servicer.ListDocuments,
-          request_deserializer=document__pb2.ListDocumentsRequest.FromString,
-          response_serializer=document__pb2.ListDocumentsResponse.SerializeToString,
+          request_deserializer=document__pb2.ListDocumentsReq.FromString,
+          response_serializer=document__pb2.ListDocumentsResp.SerializeToString,
       ),
       'RemoveDocument': grpc.unary_unary_rpc_method_handler(
           servicer.RemoveDocument,
-          request_deserializer=document__pb2.RemoveDocumentRequest.FromString,
-          response_serializer=document__pb2.RemoveDocumentResponse.SerializeToString,
+          request_deserializer=document__pb2.RemoveDocumentReq.FromString,
+          response_serializer=document__pb2.RemoveDocumentResp.SerializeToString,
       ),
       'UploadDocumentStream': grpc.stream_unary_rpc_method_handler(
           servicer.UploadDocumentStream,
@@ -595,43 +579,43 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
       ),
       'ShareDocument': grpc.unary_unary_rpc_method_handler(
           servicer.ShareDocument,
-          request_deserializer=document__pb2.ShareDocumentRequest.FromString,
-          response_serializer=document__pb2.ShareDocumentResponse.SerializeToString,
+          request_deserializer=document__pb2.ShareDocumentReq.FromString,
+          response_serializer=document__pb2.ShareDocumentResp.SerializeToString,
       ),
       'UnshareDocument': grpc.unary_unary_rpc_method_handler(
           servicer.UnshareDocument,
-          request_deserializer=document__pb2.UnshareDocumentRequest.FromString,
-          response_serializer=document__pb2.UnshareDocumentResponse.SerializeToString,
+          request_deserializer=document__pb2.UnshareDocumentReq.FromString,
+          response_serializer=document__pb2.UnshareDocumentResp.SerializeToString,
       ),
       'Login': grpc.unary_unary_rpc_method_handler(
           servicer.Login,
-          request_deserializer=accounts__pb2.LoginRequest.FromString,
-          response_serializer=accounts__pb2.LoginResponse.SerializeToString,
+          request_deserializer=accounts__pb2.LoginReq.FromString,
+          response_serializer=accounts__pb2.LoginResp.SerializeToString,
       ),
       'Logout': grpc.unary_unary_rpc_method_handler(
           servicer.Logout,
-          request_deserializer=accounts__pb2.LogoutRequest.FromString,
-          response_serializer=accounts__pb2.LogoutResponse.SerializeToString,
+          request_deserializer=accounts__pb2.LogoutReq.FromString,
+          response_serializer=accounts__pb2.LogoutResp.SerializeToString,
       ),
       'Search': grpc.unary_unary_rpc_method_handler(
           servicer.Search,
-          request_deserializer=search__pb2.SearchRequest.FromString,
-          response_serializer=search__pb2.SearchResponse.SerializeToString,
+          request_deserializer=search__pb2.SearchReq.FromString,
+          response_serializer=search__pb2.SearchResp.SerializeToString,
       ),
       'AddSharableOrg': grpc.unary_unary_rpc_method_handler(
           servicer.AddSharableOrg,
-          request_deserializer=accounts__pb2.AddSharableOrgRequest.FromString,
-          response_serializer=accounts__pb2.AddSharableOrgResponse.SerializeToString,
+          request_deserializer=accounts__pb2.AddSharableOrgReq.FromString,
+          response_serializer=accounts__pb2.AddSharableOrgResp.SerializeToString,
       ),
       'RemoveSharableOrg': grpc.unary_unary_rpc_method_handler(
           servicer.RemoveSharableOrg,
-          request_deserializer=accounts__pb2.RemoveSharableOrgRequest.FromString,
-          response_serializer=accounts__pb2.RemoveSharableOrgResponse.SerializeToString,
+          request_deserializer=accounts__pb2.RemoveSharableOrgReq.FromString,
+          response_serializer=accounts__pb2.RemoveSharableOrgResp.SerializeToString,
       ),
       'SetMultiLevelSharing': grpc.unary_unary_rpc_method_handler(
           servicer.SetMultiLevelSharing,
-          request_deserializer=accounts__pb2.SetMultiLevelSharingRequest.FromString,
-          response_serializer=accounts__pb2.SetMultiLevelSharingResponse.SerializeToString,
+          request_deserializer=accounts__pb2.SetMultiLevelSharingReq.FromString,
+          response_serializer=accounts__pb2.SetMultiLevelSharingResp.SerializeToString,
       ),
       'GetBillingDetails': grpc.unary_unary_rpc_method_handler(
           servicer.GetBillingDetails,
@@ -648,15 +632,10 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
           request_deserializer=billing__pb2.SetNextBillingFrequencyReq.FromString,
           response_serializer=billing__pb2.SetNextBillingFrequencyResp.SerializeToString,
       ),
-      'GetConfiguration': grpc.unary_unary_rpc_method_handler(
-          servicer.GetConfiguration,
-          request_deserializer=strongdoc__pb2.GetConfigurationReq.FromString,
-          response_serializer=strongdoc__pb2.GetConfigurationResp.SerializeToString,
-      ),
-      'ProcessSubscriptionEvent': grpc.unary_unary_rpc_method_handler(
-          servicer.ProcessSubscriptionEvent,
-          request_deserializer=billing__pb2.ProcessSubscriptionEventReq.FromString,
-          response_serializer=billing__pb2.ProcessSubscriptionEventResp.SerializeToString,
+      'GetAccountInfo': grpc.unary_unary_rpc_method_handler(
+          servicer.GetAccountInfo,
+          request_deserializer=accounts__pb2.GetAccountInfoReq.FromString,
+          response_serializer=accounts__pb2.GetAccountInfoResp.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

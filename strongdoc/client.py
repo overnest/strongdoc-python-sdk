@@ -31,7 +31,7 @@ def connect_to_server_with_auth(token):
     Creates a secure channel with an authentication token to the StrongDoc Server
 
     :param token: The user JWT token
-    :type token: string
+    :type token: str
     :returns: channel -- A secure gRPC SSL channel.
     """
     trusted_certs = _open_cert()
