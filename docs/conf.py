@@ -149,7 +149,7 @@ texinfo_documents = [
 
 # -- Extension configuration -------------------------------------------------
 
-autodoc_member_order: 'bysource'
+#autodoc_member_order: 'bysource'
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
