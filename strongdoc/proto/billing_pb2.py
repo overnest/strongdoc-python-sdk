@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='proto',
   syntax='proto3',
   serialized_options=b'\n\"com.strongsalt.strongdoc.sdk.protoB\007Billing\210\001\001',
-  serialized_pb=b'\n\rbilling.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a,protoc-gen-swagger/options/annotations.proto\">\n\x14GetBillingDetailsReq\x12&\n\x02\x61t\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xba\x05\n\x15GetBillingDetailsResp\x12/\n\x0bperiodStart\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\ttotalCost\x18\x03 \x01(\x01\x12\'\n\tdocuments\x18\x04 \x01(\x0b\x32\x14.proto.DocumentCosts\x12\"\n\x06search\x18\x05 \x01(\x0b\x32\x12.proto.SearchCosts\x12$\n\x07traffic\x18\x06 \x01(\x0b\x32\x13.proto.TrafficCosts\x12\x31\n\x10\x62illingFrequency\x18\x07 \x01(\x0b\x32\x17.proto.BillingFrequency:\x87\x03\x92\x41\x83\x03\n\x17*\x15GetBillingDetailsResp2\xe7\x02\x12\xe4\x02{\"periodStart\": \"2020-02-10T12:30:15.123Z\", \"periodEnd\": \"2020-02-29T23:59:59.999Z\", \"totalCost\": 800548.00, \"documents\": {\"cost\": 200.50, \"size\": 1000.4657}, \"search\": {\"cost\": 5.00, \"size\": 20.0}, \"traffic\": {\"cost\": 100.50, \"incoming\": 500.456, \"outgoing\": 200.564}, \"billingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"\x1c\n\x1aGetBillingFrequencyListReq\"\xdb\x01\n\x1bGetBillingFrequencyListResp\x12\x35\n\x14\x62illingFrequencyList\x18\x01 \x03(\x0b\x32\x17.proto.BillingFrequency:\x84\x01\x92\x41\x80\x01\n\x1d*\x1bGetBillingFrequencyListResp2_\x12]{\"billingFrequencyList\": [{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}]}\"\xdb\x01\n\x1aSetNextBillingFrequencyReq\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:f\x92\x41\x63\n\x1c*\x1aSetNextBillingFrequencyReq2C\x12\x41{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}\"\xd8\x01\n\x1bSetNextBillingFrequencyResp\x12\x35\n\x14nextBillingFrequency\x18\x01 \x01(\x0b\x32\x17.proto.BillingFrequency:\x81\x01\x92\x41~\n\x1d*\x1bSetNextBillingFrequencyResp2]\x12[{\"nextBillingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"\x9d\x02\n\x10\x42illingFrequency\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07validTo\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:\x84\x01\x92\x41\x80\x01\n\x12*\x10\x42illingFrequency2j\x12h{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-03-01T00:00:15.123Z\", \"validTo\": \"2020-06-30T23:59:59.999Z\"}\"i\n\rDocumentCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01:<\x92\x41\x39\n\x10*\x0e\x44ocumentsCosts2%\x12#{\"cost\": 200.50, \"size\": 1000.4657}\"]\n\x0bSearchCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01:2\x92\x41/\n\r*\x0bSearchCosts2\x1e\x12\x1c{\"cost\": 5.00, \"size\": 20.0}\"\x93\x01\n\x0cTrafficCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x10\n\x08incoming\x18\x02 \x01(\x01\x12\x10\n\x08outgoing\x18\x03 \x01(\x01:Q\x92\x41N\n\x0e*\x0cTrafficCosts2<\x12:{\"cost\": 100.50, \"incoming\": 500.456, \"outgoing\": 200.564}\"k\n\x1bProcessSubscriptionEventReq\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x1a\n\x12\x63ustomerIdentifier\x18\x02 \x01(\t:\"\x92\x41\x1f\n\x1d*\x1bProcessSubscriptionEventReq\"C\n\x1cProcessSubscriptionEventResp:#\x92\x41 \n\x1e*\x1cProcessSubscriptionEventResp*6\n\x0cTimeInterval\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x30\n\"com.strongsalt.strongdoc.sdk.protoB\x07\x42illing\x88\x01\x01\x62\x06proto3'
+  serialized_pb=b'\n\rbilling.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a,protoc-gen-swagger/options/annotations.proto\">\n\x14GetBillingDetailsReq\x12&\n\x02\x61t\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x98\x06\n\x15GetBillingDetailsResp\x12/\n\x0bperiodStart\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\ttotalCost\x18\x03 \x01(\x01\x12\'\n\tdocuments\x18\x04 \x01(\x0b\x32\x14.proto.DocumentCosts\x12\"\n\x06search\x18\x05 \x01(\x0b\x32\x12.proto.SearchCosts\x12$\n\x07traffic\x18\x06 \x01(\x0b\x32\x13.proto.TrafficCosts\x12\x31\n\x10\x62illingFrequency\x18\x07 \x01(\x0b\x32\x17.proto.BillingFrequency:\xe5\x03\x92\x41\xe1\x03\n\x17*\x15GetBillingDetailsResp2\xc5\x03\x12\xc2\x03{\"periodStart\": \"2020-02-10T12:30:15.123Z\", \"periodEnd\": \"2020-03-01T00:00:00Z\", \"totalCost\": 800548.00, \"documents\": {\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}, \"search\": {\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}, \"traffic\": {\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}, \"billingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"\x1c\n\x1aGetBillingFrequencyListReq\"\xdb\x01\n\x1bGetBillingFrequencyListResp\x12\x35\n\x14\x62illingFrequencyList\x18\x01 \x03(\x0b\x32\x17.proto.BillingFrequency:\x84\x01\x92\x41\x80\x01\n\x1d*\x1bGetBillingFrequencyListResp2_\x12]{\"billingFrequencyList\": [{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}]}\"\xdb\x01\n\x1aSetNextBillingFrequencyReq\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:f\x92\x41\x63\n\x1c*\x1aSetNextBillingFrequencyReq2C\x12\x41{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}\"\xd8\x01\n\x1bSetNextBillingFrequencyResp\x12\x35\n\x14nextBillingFrequency\x18\x01 \x01(\x0b\x32\x17.proto.BillingFrequency:\x81\x01\x92\x41~\n\x1d*\x1bSetNextBillingFrequencyResp2]\x12[{\"nextBillingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"\x97\x02\n\x10\x42illingFrequency\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07validTo\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:\x7f\x92\x41|\n\x12*\x10\x42illingFrequency2f\x12\x64{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-03-01T00:00:15.123Z\", \"validTo\": \"2020-06-01T00:00:00Z\"}\"\x96\x01\n\rDocumentCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01\x12\x0c\n\x04tier\x18\x03 \x01(\t:[\x92\x41X\n\x10*\x0e\x44ocumentsCosts2D\x12\x42{\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}\"\x93\x01\n\x0bSearchCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01\x12\x0c\n\x04tier\x18\x03 \x01(\t:Z\x92\x41W\n\r*\x0bSearchCosts2F\x12\x44{\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}\"\xbc\x01\n\x0cTrafficCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x10\n\x08incoming\x18\x02 \x01(\x01\x12\x10\n\x08outgoing\x18\x03 \x01(\x01\x12\x0c\n\x04tier\x18\x04 \x01(\t:l\x92\x41i\n\x0e*\x0cTrafficCosts2W\x12U{\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}*6\n\x0cTimeInterval\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x30\n\"com.strongsalt.strongdoc.sdk.protoB\x07\x42illing\x88\x01\x01\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _TIMEINTERVAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2379,
-  serialized_end=2433,
+  serialized_start=2431,
+  serialized_end=2485,
 )
 _sym_db.RegisterEnumDescriptor(_TIMEINTERVAL)
 
@@ -151,14 +151,14 @@ _GETBILLINGDETAILSRESP = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A\203\003\n\027*\025GetBillingDetailsResp2\347\002\022\344\002{\"periodStart\": \"2020-02-10T12:30:15.123Z\", \"periodEnd\": \"2020-02-29T23:59:59.999Z\", \"totalCost\": 800548.00, \"documents\": {\"cost\": 200.50, \"size\": 1000.4657}, \"search\": {\"cost\": 5.00, \"size\": 20.0}, \"traffic\": {\"cost\": 100.50, \"incoming\": 500.456, \"outgoing\": 200.564}, \"billingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}',
+  serialized_options=b'\222A\341\003\n\027*\025GetBillingDetailsResp2\305\003\022\302\003{\"periodStart\": \"2020-02-10T12:30:15.123Z\", \"periodEnd\": \"2020-03-01T00:00:00Z\", \"totalCost\": 800548.00, \"documents\": {\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}, \"search\": {\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}, \"traffic\": {\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}, \"billingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=168,
-  serialized_end=866,
+  serialized_end=960,
 )
 
 
@@ -181,8 +181,8 @@ _GETBILLINGFREQUENCYLISTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=868,
-  serialized_end=896,
+  serialized_start=962,
+  serialized_end=990,
 )
 
 
@@ -212,8 +212,8 @@ _GETBILLINGFREQUENCYLISTRESP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=1118,
+  serialized_start=993,
+  serialized_end=1212,
 )
 
 
@@ -250,8 +250,8 @@ _SETNEXTBILLINGFREQUENCYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1121,
-  serialized_end=1340,
+  serialized_start=1215,
+  serialized_end=1434,
 )
 
 
@@ -281,8 +281,8 @@ _SETNEXTBILLINGFREQUENCYRESP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1343,
-  serialized_end=1559,
+  serialized_start=1437,
+  serialized_end=1653,
 )
 
 
@@ -320,14 +320,14 @@ _BILLINGFREQUENCY = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A\200\001\n\022*\020BillingFrequency2j\022h{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-03-01T00:00:15.123Z\", \"validTo\": \"2020-06-30T23:59:59.999Z\"}',
+  serialized_options=b'\222A|\n\022*\020BillingFrequency2f\022d{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-03-01T00:00:15.123Z\", \"validTo\": \"2020-06-01T00:00:00Z\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1562,
-  serialized_end=1847,
+  serialized_start=1656,
+  serialized_end=1935,
 )
 
 
@@ -352,20 +352,27 @@ _DOCUMENTCOSTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tier', full_name='proto.DocumentCosts.tier', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A9\n\020*\016DocumentsCosts2%\022#{\"cost\": 200.50, \"size\": 1000.4657}',
+  serialized_options=b'\222AX\n\020*\016DocumentsCosts2D\022B{\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1849,
-  serialized_end=1954,
+  serialized_start=1938,
+  serialized_end=2088,
 )
 
 
@@ -390,20 +397,27 @@ _SEARCHCOSTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tier', full_name='proto.SearchCosts.tier', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A/\n\r*\013SearchCosts2\036\022\034{\"cost\": 5.00, \"size\": 20.0}',
+  serialized_options=b'\222AW\n\r*\013SearchCosts2F\022D{\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1956,
-  serialized_end=2049,
+  serialized_start=2091,
+  serialized_end=2238,
 )
 
 
@@ -435,40 +449,9 @@ _TRAFFICCOSTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\222AN\n\016*\014TrafficCosts2<\022:{\"cost\": 100.50, \"incoming\": 500.456, \"outgoing\": 200.564}',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2052,
-  serialized_end=2199,
-)
-
-
-_PROCESSSUBSCRIPTIONEVENTREQ = _descriptor.Descriptor(
-  name='ProcessSubscriptionEventReq',
-  full_name='proto.ProcessSubscriptionEventReq',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='proto.ProcessSubscriptionEventReq.type', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='customerIdentifier', full_name='proto.ProcessSubscriptionEventReq.customerIdentifier', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='tier', full_name='proto.TrafficCosts.tier', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -479,38 +462,14 @@ _PROCESSSUBSCRIPTIONEVENTREQ = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A\037\n\035*\033ProcessSubscriptionEventReq',
+  serialized_options=b'\222Ai\n\016*\014TrafficCosts2W\022U{\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2201,
-  serialized_end=2308,
-)
-
-
-_PROCESSSUBSCRIPTIONEVENTRESP = _descriptor.Descriptor(
-  name='ProcessSubscriptionEventResp',
-  full_name='proto.ProcessSubscriptionEventResp',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'\222A \n\036*\034ProcessSubscriptionEventResp',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2310,
-  serialized_end=2377,
+  serialized_start=2241,
+  serialized_end=2429,
 )
 
 _GETBILLINGDETAILSREQ.fields_by_name['at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -537,8 +496,6 @@ DESCRIPTOR.message_types_by_name['BillingFrequency'] = _BILLINGFREQUENCY
 DESCRIPTOR.message_types_by_name['DocumentCosts'] = _DOCUMENTCOSTS
 DESCRIPTOR.message_types_by_name['SearchCosts'] = _SEARCHCOSTS
 DESCRIPTOR.message_types_by_name['TrafficCosts'] = _TRAFFICCOSTS
-DESCRIPTOR.message_types_by_name['ProcessSubscriptionEventReq'] = _PROCESSSUBSCRIPTIONEVENTREQ
-DESCRIPTOR.message_types_by_name['ProcessSubscriptionEventResp'] = _PROCESSSUBSCRIPTIONEVENTRESP
 DESCRIPTOR.enum_types_by_name['TimeInterval'] = _TIMEINTERVAL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -612,20 +569,6 @@ TrafficCosts = _reflection.GeneratedProtocolMessageType('TrafficCosts', (_messag
   })
 _sym_db.RegisterMessage(TrafficCosts)
 
-ProcessSubscriptionEventReq = _reflection.GeneratedProtocolMessageType('ProcessSubscriptionEventReq', (_message.Message,), {
-  'DESCRIPTOR' : _PROCESSSUBSCRIPTIONEVENTREQ,
-  '__module__' : 'billing_pb2'
-  # @@protoc_insertion_point(class_scope:proto.ProcessSubscriptionEventReq)
-  })
-_sym_db.RegisterMessage(ProcessSubscriptionEventReq)
-
-ProcessSubscriptionEventResp = _reflection.GeneratedProtocolMessageType('ProcessSubscriptionEventResp', (_message.Message,), {
-  'DESCRIPTOR' : _PROCESSSUBSCRIPTIONEVENTRESP,
-  '__module__' : 'billing_pb2'
-  # @@protoc_insertion_point(class_scope:proto.ProcessSubscriptionEventResp)
-  })
-_sym_db.RegisterMessage(ProcessSubscriptionEventResp)
-
 
 DESCRIPTOR._options = None
 _GETBILLINGDETAILSRESP._options = None
@@ -636,6 +579,4 @@ _BILLINGFREQUENCY._options = None
 _DOCUMENTCOSTS._options = None
 _SEARCHCOSTS._options = None
 _TRAFFICCOSTS._options = None
-_PROCESSSUBSCRIPTIONEVENTREQ._options = None
-_PROCESSSUBSCRIPTIONEVENTRESP._options = None
 # @@protoc_insertion_point(module_scope)

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='proto',
   syntax='proto3',
   serialized_options=b'\n\"com.strongsalt.strongdoc.sdk.protoB\tDocuments\210\001\001',
-  serialized_pb=b'\n\x0e\x64ocument.proto\x12\x05proto\x1a,protoc-gen-swagger/options/annotations.proto\"J\n\x12UploadDocStreamReq\x12\x11\n\x07\x64ocName\x18\x01 \x01(\tH\x00\x12\x13\n\tplaintext\x18\x02 \x01(\x0cH\x00\x42\x0c\n\nNameOrData\"3\n\x13UploadDocStreamResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\"%\n\x14\x44ownloadDocStreamReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\"9\n\x15\x44ownloadDocStreamResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\x0c\"\x8c\x01\n\x0cUploadDocReq\x12\x0f\n\x07\x64ocName\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\t:X\x92\x41U\n\x0e*\x0cUploadDocReq2C\x12\x41{\"docName\": \"bribeamount\", \"plaintext\": \"I paid 1M to Volodymyr\"}\"S\n\rUploadDocResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t:3\x92\x41\x30\n\x0f*\rUploadDocResp2\x1d\x12\x1b{\"docID\": \"bribeamount_ID\"}\"U\n\x0e\x44ownloadDocReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t:4\x92\x41\x31\n\x10*\x0e\x44ownloadDocReq2\x1d\x12\x1b{\"docID\": \"bribeamount_ID\"}\"\x90\x01\n\x0f\x44ownloadDocResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\t:[\x92\x41X\n\x10*\x0e\x44ownloadDocReq2D\x12\x42{\"docID\": \"bribeamount_ID\", \"plaintext\": \"I paid 1M to Volodymyr\"}\"\x82\x01\n\x14ShareDocumentRequest\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t:K\x92\x41H\n\x16*\x14ShareDocumentRequest2.\x12,{\"docID\": \"bribeamount_ID\", \"userID\": \"FBI\"}\"[\n\x15ShareDocumentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08:1\x92\x41.\n\x17*\x15ShareDocumentResponse2\x13\x12\x11{\"success\": true}\"\x8b\x01\n\x16UnshareDocumentRequest\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t:R\x92\x41O\n\x18*\x16UnshareDocumentRequest23\x12\x31{\"docID\": \"bribeamount_ID\", \"userID\": \"Fox News\"}\"X\n\x17UnshareDocumentResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03:.\x92\x41+\n\x19*\x17UnshareDocumentResponse2\x0e\x12\x0c{\"count\": 1}\"3\n\x14ListDocumentsRequest:\x1b\x92\x41\x18\n\x16*\x14ListDocumentsRequest\"\x84\x02\n\x15ListDocumentsResponse\x12\x38\n\tdocuments\x18\x01 \x03(\x0b\x32%.proto.ListDocumentsResponse.Document\x1a\x38\n\x08\x44ocument\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x0f\n\x07\x64ocName\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\x04:w\x92\x41t\n\x17*\x15ListDocumentsResponse2Y\x12W{\"documents\": [{\"docID\": \"bribeamount_ID\", \"docName\": \"bribeamount.pdf\", \"size\": 561}]}\"c\n\x15RemoveDocumentRequest\x12\r\n\x05\x64ocID\x18\x01 \x01(\t:;\x92\x41\x38\n\x17*\x15RemoveDocumentRequest2\x1d\x12\x1b{\"docID\": \"bribeamount_ID\"}\"[\n\x16RemoveDocumentResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08:1\x92\x41.\n\x18*\x16RemoveDocumentResponse2\x12\x12\x10{\"status\": true}B2\n\"com.strongsalt.strongdoc.sdk.protoB\tDocuments\x88\x01\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0e\x64ocument.proto\x12\x05proto\x1a,protoc-gen-swagger/options/annotations.proto\"J\n\x12UploadDocStreamReq\x12\x11\n\x07\x64ocName\x18\x01 \x01(\tH\x00\x12\x13\n\tplaintext\x18\x02 \x01(\x0cH\x00\x42\x0c\n\nNameOrData\"3\n\x13UploadDocStreamResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\"%\n\x14\x44ownloadDocStreamReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\"9\n\x15\x44ownloadDocStreamResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\x0c\"\x8c\x01\n\x0cUploadDocReq\x12\x0f\n\x07\x64ocName\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\t:X\x92\x41U\n\x0e*\x0cUploadDocReq2C\x12\x41{\"docName\": \"bribeamount\", \"plaintext\": \"I paid 1M to Volodymyr\"}\"S\n\rUploadDocResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t:3\x92\x41\x30\n\x0f*\rUploadDocResp2\x1d\x12\x1b{\"docID\": \"bribeamount_ID\"}\"U\n\x0e\x44ownloadDocReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t:4\x92\x41\x31\n\x10*\x0e\x44ownloadDocReq2\x1d\x12\x1b{\"docID\": \"bribeamount_ID\"}\"\x90\x01\n\x0f\x44ownloadDocResp\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\t:[\x92\x41X\n\x10*\x0e\x44ownloadDocReq2D\x12\x42{\"docID\": \"bribeamount_ID\", \"plaintext\": \"I paid 1M to Volodymyr\"}\"z\n\x10ShareDocumentReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t:G\x92\x41\x44\n\x12*\x10ShareDocumentReq2.\x12,{\"docID\": \"bribeamount_ID\", \"userID\": \"FBI\"}\"S\n\x11ShareDocumentResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:-\x92\x41*\n\x13*\x11ShareDocumentResp2\x13\x12\x11{\"success\": true}\"\x83\x01\n\x12UnshareDocumentReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t:N\x92\x41K\n\x14*\x12UnshareDocumentReq23\x12\x31{\"docID\": \"bribeamount_ID\", \"userID\": \"Fox News\"}\"P\n\x13UnshareDocumentResp\x12\r\n\x05\x63ount\x18\x01 \x01(\x03:*\x92\x41\'\n\x15*\x13UnshareDocumentResp2\x0e\x12\x0c{\"count\": 1}\"+\n\x10ListDocumentsReq:\x17\x92\x41\x14\n\x12*\x10ListDocumentsReq\"\xf8\x01\n\x11ListDocumentsResp\x12\x34\n\tdocuments\x18\x01 \x03(\x0b\x32!.proto.ListDocumentsResp.Document\x1a\x38\n\x08\x44ocument\x12\r\n\x05\x64ocID\x18\x01 \x01(\t\x12\x0f\n\x07\x64ocName\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\x04:s\x92\x41p\n\x13*\x11ListDocumentsResp2Y\x12W{\"documents\": [{\"docID\": \"bribeamount_ID\", \"docName\": \"bribeamount.pdf\", \"size\": 561}]}\"[\n\x11RemoveDocumentReq\x12\r\n\x05\x64ocID\x18\x01 \x01(\t:7\x92\x41\x34\n\x13*\x11RemoveDocumentReq2\x1d\x12\x1b{\"docID\": \"bribeamount_ID\"}\"S\n\x12RemoveDocumentResp\x12\x0e\n\x06status\x18\x01 \x01(\x08:-\x92\x41*\n\x14*\x12RemoveDocumentResp2\x12\x12\x10{\"status\": true}B2\n\"com.strongsalt.strongdoc.sdk.protoB\tDocuments\x88\x01\x01\x62\x06proto3'
   ,
   dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -312,22 +312,22 @@ _DOWNLOADDOCRESP = _descriptor.Descriptor(
 )
 
 
-_SHAREDOCUMENTREQUEST = _descriptor.Descriptor(
-  name='ShareDocumentRequest',
-  full_name='proto.ShareDocumentRequest',
+_SHAREDOCUMENTREQ = _descriptor.Descriptor(
+  name='ShareDocumentReq',
+  full_name='proto.ShareDocumentReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='docID', full_name='proto.ShareDocumentRequest.docID', index=0,
+      name='docID', full_name='proto.ShareDocumentReq.docID', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='userID', full_name='proto.ShareDocumentRequest.userID', index=1,
+      name='userID', full_name='proto.ShareDocumentReq.userID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -339,26 +339,26 @@ _SHAREDOCUMENTREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222AH\n\026*\024ShareDocumentRequest2.\022,{\"docID\": \"bribeamount_ID\", \"userID\": \"FBI\"}',
+  serialized_options=b'\222AD\n\022*\020ShareDocumentReq2.\022,{\"docID\": \"bribeamount_ID\", \"userID\": \"FBI\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=761,
-  serialized_end=891,
+  serialized_start=760,
+  serialized_end=882,
 )
 
 
-_SHAREDOCUMENTRESPONSE = _descriptor.Descriptor(
-  name='ShareDocumentResponse',
-  full_name='proto.ShareDocumentResponse',
+_SHAREDOCUMENTRESP = _descriptor.Descriptor(
+  name='ShareDocumentResp',
+  full_name='proto.ShareDocumentResp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='proto.ShareDocumentResponse.success', index=0,
+      name='success', full_name='proto.ShareDocumentResp.success', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -370,33 +370,33 @@ _SHAREDOCUMENTRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A.\n\027*\025ShareDocumentResponse2\023\022\021{\"success\": true}',
+  serialized_options=b'\222A*\n\023*\021ShareDocumentResp2\023\022\021{\"success\": true}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=893,
-  serialized_end=984,
+  serialized_start=884,
+  serialized_end=967,
 )
 
 
-_UNSHAREDOCUMENTREQUEST = _descriptor.Descriptor(
-  name='UnshareDocumentRequest',
-  full_name='proto.UnshareDocumentRequest',
+_UNSHAREDOCUMENTREQ = _descriptor.Descriptor(
+  name='UnshareDocumentReq',
+  full_name='proto.UnshareDocumentReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='docID', full_name='proto.UnshareDocumentRequest.docID', index=0,
+      name='docID', full_name='proto.UnshareDocumentReq.docID', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='userID', full_name='proto.UnshareDocumentRequest.userID', index=1,
+      name='userID', full_name='proto.UnshareDocumentReq.userID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -408,26 +408,26 @@ _UNSHAREDOCUMENTREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222AO\n\030*\026UnshareDocumentRequest23\0221{\"docID\": \"bribeamount_ID\", \"userID\": \"Fox News\"}',
+  serialized_options=b'\222AK\n\024*\022UnshareDocumentReq23\0221{\"docID\": \"bribeamount_ID\", \"userID\": \"Fox News\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=987,
-  serialized_end=1126,
+  serialized_start=970,
+  serialized_end=1101,
 )
 
 
-_UNSHAREDOCUMENTRESPONSE = _descriptor.Descriptor(
-  name='UnshareDocumentResponse',
-  full_name='proto.UnshareDocumentResponse',
+_UNSHAREDOCUMENTRESP = _descriptor.Descriptor(
+  name='UnshareDocumentResp',
+  full_name='proto.UnshareDocumentResp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='count', full_name='proto.UnshareDocumentResponse.count', index=0,
+      name='count', full_name='proto.UnshareDocumentResp.count', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -439,20 +439,20 @@ _UNSHAREDOCUMENTRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A+\n\031*\027UnshareDocumentResponse2\016\022\014{\"count\": 1}',
+  serialized_options=b'\222A\'\n\025*\023UnshareDocumentResp2\016\022\014{\"count\": 1}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1128,
-  serialized_end=1216,
+  serialized_start=1103,
+  serialized_end=1183,
 )
 
 
-_LISTDOCUMENTSREQUEST = _descriptor.Descriptor(
-  name='ListDocumentsRequest',
-  full_name='proto.ListDocumentsRequest',
+_LISTDOCUMENTSREQ = _descriptor.Descriptor(
+  name='ListDocumentsReq',
+  full_name='proto.ListDocumentsReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -463,40 +463,40 @@ _LISTDOCUMENTSREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A\030\n\026*\024ListDocumentsRequest',
+  serialized_options=b'\222A\024\n\022*\020ListDocumentsReq',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1218,
-  serialized_end=1269,
+  serialized_start=1185,
+  serialized_end=1228,
 )
 
 
-_LISTDOCUMENTSRESPONSE_DOCUMENT = _descriptor.Descriptor(
+_LISTDOCUMENTSRESP_DOCUMENT = _descriptor.Descriptor(
   name='Document',
-  full_name='proto.ListDocumentsResponse.Document',
+  full_name='proto.ListDocumentsResp.Document',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='docID', full_name='proto.ListDocumentsResponse.Document.docID', index=0,
+      name='docID', full_name='proto.ListDocumentsResp.Document.docID', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='docName', full_name='proto.ListDocumentsResponse.Document.docName', index=1,
+      name='docName', full_name='proto.ListDocumentsResp.Document.docName', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='size', full_name='proto.ListDocumentsResponse.Document.size', index=2,
+      name='size', full_name='proto.ListDocumentsResp.Document.size', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -514,19 +514,19 @@ _LISTDOCUMENTSRESPONSE_DOCUMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1355,
-  serialized_end=1411,
+  serialized_start=1306,
+  serialized_end=1362,
 )
 
-_LISTDOCUMENTSRESPONSE = _descriptor.Descriptor(
-  name='ListDocumentsResponse',
-  full_name='proto.ListDocumentsResponse',
+_LISTDOCUMENTSRESP = _descriptor.Descriptor(
+  name='ListDocumentsResp',
+  full_name='proto.ListDocumentsResp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='documents', full_name='proto.ListDocumentsResponse.documents', index=0,
+      name='documents', full_name='proto.ListDocumentsResp.documents', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -535,29 +535,29 @@ _LISTDOCUMENTSRESPONSE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_LISTDOCUMENTSRESPONSE_DOCUMENT, ],
+  nested_types=[_LISTDOCUMENTSRESP_DOCUMENT, ],
   enum_types=[
   ],
-  serialized_options=b'\222At\n\027*\025ListDocumentsResponse2Y\022W{\"documents\": [{\"docID\": \"bribeamount_ID\", \"docName\": \"bribeamount.pdf\", \"size\": 561}]}',
+  serialized_options=b'\222Ap\n\023*\021ListDocumentsResp2Y\022W{\"documents\": [{\"docID\": \"bribeamount_ID\", \"docName\": \"bribeamount.pdf\", \"size\": 561}]}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1272,
-  serialized_end=1532,
+  serialized_start=1231,
+  serialized_end=1479,
 )
 
 
-_REMOVEDOCUMENTREQUEST = _descriptor.Descriptor(
-  name='RemoveDocumentRequest',
-  full_name='proto.RemoveDocumentRequest',
+_REMOVEDOCUMENTREQ = _descriptor.Descriptor(
+  name='RemoveDocumentReq',
+  full_name='proto.RemoveDocumentReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='docID', full_name='proto.RemoveDocumentRequest.docID', index=0,
+      name='docID', full_name='proto.RemoveDocumentReq.docID', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -569,26 +569,26 @@ _REMOVEDOCUMENTREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A8\n\027*\025RemoveDocumentRequest2\035\022\033{\"docID\": \"bribeamount_ID\"}',
+  serialized_options=b'\222A4\n\023*\021RemoveDocumentReq2\035\022\033{\"docID\": \"bribeamount_ID\"}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1534,
-  serialized_end=1633,
+  serialized_start=1481,
+  serialized_end=1572,
 )
 
 
-_REMOVEDOCUMENTRESPONSE = _descriptor.Descriptor(
-  name='RemoveDocumentResponse',
-  full_name='proto.RemoveDocumentResponse',
+_REMOVEDOCUMENTRESP = _descriptor.Descriptor(
+  name='RemoveDocumentResp',
+  full_name='proto.RemoveDocumentResp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='proto.RemoveDocumentResponse.status', index=0,
+      name='status', full_name='proto.RemoveDocumentResp.status', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -600,14 +600,14 @@ _REMOVEDOCUMENTRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A.\n\030*\026RemoveDocumentResponse2\022\022\020{\"status\": true}',
+  serialized_options=b'\222A*\n\024*\022RemoveDocumentResp2\022\022\020{\"status\": true}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1635,
-  serialized_end=1726,
+  serialized_start=1574,
+  serialized_end=1657,
 )
 
 _UPLOADDOCSTREAMREQ.oneofs_by_name['NameOrData'].fields.append(
@@ -616,8 +616,8 @@ _UPLOADDOCSTREAMREQ.fields_by_name['docName'].containing_oneof = _UPLOADDOCSTREA
 _UPLOADDOCSTREAMREQ.oneofs_by_name['NameOrData'].fields.append(
   _UPLOADDOCSTREAMREQ.fields_by_name['plaintext'])
 _UPLOADDOCSTREAMREQ.fields_by_name['plaintext'].containing_oneof = _UPLOADDOCSTREAMREQ.oneofs_by_name['NameOrData']
-_LISTDOCUMENTSRESPONSE_DOCUMENT.containing_type = _LISTDOCUMENTSRESPONSE
-_LISTDOCUMENTSRESPONSE.fields_by_name['documents'].message_type = _LISTDOCUMENTSRESPONSE_DOCUMENT
+_LISTDOCUMENTSRESP_DOCUMENT.containing_type = _LISTDOCUMENTSRESP
+_LISTDOCUMENTSRESP.fields_by_name['documents'].message_type = _LISTDOCUMENTSRESP_DOCUMENT
 DESCRIPTOR.message_types_by_name['UploadDocStreamReq'] = _UPLOADDOCSTREAMREQ
 DESCRIPTOR.message_types_by_name['UploadDocStreamResp'] = _UPLOADDOCSTREAMRESP
 DESCRIPTOR.message_types_by_name['DownloadDocStreamReq'] = _DOWNLOADDOCSTREAMREQ
@@ -626,14 +626,14 @@ DESCRIPTOR.message_types_by_name['UploadDocReq'] = _UPLOADDOCREQ
 DESCRIPTOR.message_types_by_name['UploadDocResp'] = _UPLOADDOCRESP
 DESCRIPTOR.message_types_by_name['DownloadDocReq'] = _DOWNLOADDOCREQ
 DESCRIPTOR.message_types_by_name['DownloadDocResp'] = _DOWNLOADDOCRESP
-DESCRIPTOR.message_types_by_name['ShareDocumentRequest'] = _SHAREDOCUMENTREQUEST
-DESCRIPTOR.message_types_by_name['ShareDocumentResponse'] = _SHAREDOCUMENTRESPONSE
-DESCRIPTOR.message_types_by_name['UnshareDocumentRequest'] = _UNSHAREDOCUMENTREQUEST
-DESCRIPTOR.message_types_by_name['UnshareDocumentResponse'] = _UNSHAREDOCUMENTRESPONSE
-DESCRIPTOR.message_types_by_name['ListDocumentsRequest'] = _LISTDOCUMENTSREQUEST
-DESCRIPTOR.message_types_by_name['ListDocumentsResponse'] = _LISTDOCUMENTSRESPONSE
-DESCRIPTOR.message_types_by_name['RemoveDocumentRequest'] = _REMOVEDOCUMENTREQUEST
-DESCRIPTOR.message_types_by_name['RemoveDocumentResponse'] = _REMOVEDOCUMENTRESPONSE
+DESCRIPTOR.message_types_by_name['ShareDocumentReq'] = _SHAREDOCUMENTREQ
+DESCRIPTOR.message_types_by_name['ShareDocumentResp'] = _SHAREDOCUMENTRESP
+DESCRIPTOR.message_types_by_name['UnshareDocumentReq'] = _UNSHAREDOCUMENTREQ
+DESCRIPTOR.message_types_by_name['UnshareDocumentResp'] = _UNSHAREDOCUMENTRESP
+DESCRIPTOR.message_types_by_name['ListDocumentsReq'] = _LISTDOCUMENTSREQ
+DESCRIPTOR.message_types_by_name['ListDocumentsResp'] = _LISTDOCUMENTSRESP
+DESCRIPTOR.message_types_by_name['RemoveDocumentReq'] = _REMOVEDOCUMENTREQ
+DESCRIPTOR.message_types_by_name['RemoveDocumentResp'] = _REMOVEDOCUMENTRESP
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 UploadDocStreamReq = _reflection.GeneratedProtocolMessageType('UploadDocStreamReq', (_message.Message,), {
@@ -692,69 +692,69 @@ DownloadDocResp = _reflection.GeneratedProtocolMessageType('DownloadDocResp', (_
   })
 _sym_db.RegisterMessage(DownloadDocResp)
 
-ShareDocumentRequest = _reflection.GeneratedProtocolMessageType('ShareDocumentRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SHAREDOCUMENTREQUEST,
+ShareDocumentReq = _reflection.GeneratedProtocolMessageType('ShareDocumentReq', (_message.Message,), {
+  'DESCRIPTOR' : _SHAREDOCUMENTREQ,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.ShareDocumentRequest)
+  # @@protoc_insertion_point(class_scope:proto.ShareDocumentReq)
   })
-_sym_db.RegisterMessage(ShareDocumentRequest)
+_sym_db.RegisterMessage(ShareDocumentReq)
 
-ShareDocumentResponse = _reflection.GeneratedProtocolMessageType('ShareDocumentResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SHAREDOCUMENTRESPONSE,
+ShareDocumentResp = _reflection.GeneratedProtocolMessageType('ShareDocumentResp', (_message.Message,), {
+  'DESCRIPTOR' : _SHAREDOCUMENTRESP,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.ShareDocumentResponse)
+  # @@protoc_insertion_point(class_scope:proto.ShareDocumentResp)
   })
-_sym_db.RegisterMessage(ShareDocumentResponse)
+_sym_db.RegisterMessage(ShareDocumentResp)
 
-UnshareDocumentRequest = _reflection.GeneratedProtocolMessageType('UnshareDocumentRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UNSHAREDOCUMENTREQUEST,
+UnshareDocumentReq = _reflection.GeneratedProtocolMessageType('UnshareDocumentReq', (_message.Message,), {
+  'DESCRIPTOR' : _UNSHAREDOCUMENTREQ,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.UnshareDocumentRequest)
+  # @@protoc_insertion_point(class_scope:proto.UnshareDocumentReq)
   })
-_sym_db.RegisterMessage(UnshareDocumentRequest)
+_sym_db.RegisterMessage(UnshareDocumentReq)
 
-UnshareDocumentResponse = _reflection.GeneratedProtocolMessageType('UnshareDocumentResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UNSHAREDOCUMENTRESPONSE,
+UnshareDocumentResp = _reflection.GeneratedProtocolMessageType('UnshareDocumentResp', (_message.Message,), {
+  'DESCRIPTOR' : _UNSHAREDOCUMENTRESP,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.UnshareDocumentResponse)
+  # @@protoc_insertion_point(class_scope:proto.UnshareDocumentResp)
   })
-_sym_db.RegisterMessage(UnshareDocumentResponse)
+_sym_db.RegisterMessage(UnshareDocumentResp)
 
-ListDocumentsRequest = _reflection.GeneratedProtocolMessageType('ListDocumentsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDOCUMENTSREQUEST,
+ListDocumentsReq = _reflection.GeneratedProtocolMessageType('ListDocumentsReq', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDOCUMENTSREQ,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.ListDocumentsRequest)
+  # @@protoc_insertion_point(class_scope:proto.ListDocumentsReq)
   })
-_sym_db.RegisterMessage(ListDocumentsRequest)
+_sym_db.RegisterMessage(ListDocumentsReq)
 
-ListDocumentsResponse = _reflection.GeneratedProtocolMessageType('ListDocumentsResponse', (_message.Message,), {
+ListDocumentsResp = _reflection.GeneratedProtocolMessageType('ListDocumentsResp', (_message.Message,), {
 
   'Document' : _reflection.GeneratedProtocolMessageType('Document', (_message.Message,), {
-    'DESCRIPTOR' : _LISTDOCUMENTSRESPONSE_DOCUMENT,
+    'DESCRIPTOR' : _LISTDOCUMENTSRESP_DOCUMENT,
     '__module__' : 'document_pb2'
-    # @@protoc_insertion_point(class_scope:proto.ListDocumentsResponse.Document)
+    # @@protoc_insertion_point(class_scope:proto.ListDocumentsResp.Document)
     })
   ,
-  'DESCRIPTOR' : _LISTDOCUMENTSRESPONSE,
+  'DESCRIPTOR' : _LISTDOCUMENTSRESP,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.ListDocumentsResponse)
+  # @@protoc_insertion_point(class_scope:proto.ListDocumentsResp)
   })
-_sym_db.RegisterMessage(ListDocumentsResponse)
-_sym_db.RegisterMessage(ListDocumentsResponse.Document)
+_sym_db.RegisterMessage(ListDocumentsResp)
+_sym_db.RegisterMessage(ListDocumentsResp.Document)
 
-RemoveDocumentRequest = _reflection.GeneratedProtocolMessageType('RemoveDocumentRequest', (_message.Message,), {
-  'DESCRIPTOR' : _REMOVEDOCUMENTREQUEST,
+RemoveDocumentReq = _reflection.GeneratedProtocolMessageType('RemoveDocumentReq', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEDOCUMENTREQ,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.RemoveDocumentRequest)
+  # @@protoc_insertion_point(class_scope:proto.RemoveDocumentReq)
   })
-_sym_db.RegisterMessage(RemoveDocumentRequest)
+_sym_db.RegisterMessage(RemoveDocumentReq)
 
-RemoveDocumentResponse = _reflection.GeneratedProtocolMessageType('RemoveDocumentResponse', (_message.Message,), {
-  'DESCRIPTOR' : _REMOVEDOCUMENTRESPONSE,
+RemoveDocumentResp = _reflection.GeneratedProtocolMessageType('RemoveDocumentResp', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEDOCUMENTRESP,
   '__module__' : 'document_pb2'
-  # @@protoc_insertion_point(class_scope:proto.RemoveDocumentResponse)
+  # @@protoc_insertion_point(class_scope:proto.RemoveDocumentResp)
   })
-_sym_db.RegisterMessage(RemoveDocumentResponse)
+_sym_db.RegisterMessage(RemoveDocumentResp)
 
 
 DESCRIPTOR._options = None
@@ -762,12 +762,12 @@ _UPLOADDOCREQ._options = None
 _UPLOADDOCRESP._options = None
 _DOWNLOADDOCREQ._options = None
 _DOWNLOADDOCRESP._options = None
-_SHAREDOCUMENTREQUEST._options = None
-_SHAREDOCUMENTRESPONSE._options = None
-_UNSHAREDOCUMENTREQUEST._options = None
-_UNSHAREDOCUMENTRESPONSE._options = None
-_LISTDOCUMENTSREQUEST._options = None
-_LISTDOCUMENTSRESPONSE._options = None
-_REMOVEDOCUMENTREQUEST._options = None
-_REMOVEDOCUMENTRESPONSE._options = None
+_SHAREDOCUMENTREQ._options = None
+_SHAREDOCUMENTRESP._options = None
+_UNSHAREDOCUMENTREQ._options = None
+_UNSHAREDOCUMENTRESP._options = None
+_LISTDOCUMENTSREQ._options = None
+_LISTDOCUMENTSRESP._options = None
+_REMOVEDOCUMENTREQ._options = None
+_REMOVEDOCUMENTRESP._options = None
 # @@protoc_insertion_point(module_scope)

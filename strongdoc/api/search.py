@@ -13,23 +13,23 @@ def search(token, query):
     :param token:
         The user JWT token.
     :type token:
-        `string`
+        str
     :param query:
         The query string.
     :type query:
-        `string`
+        str
     :raises grpc.RpcError:
         Raised by the gRPC library to indicate non-OK-status RPC termination.
 
     returns:
         The hit list of the search.
     :rtype:
-        `Array` of :class:`DocumentResult`
+        list(DocumentResult)
     """
     with client.connect_to_server_with_auth(token) as auth_conn:
         client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
 
-        request = search_pb2.SearchRequest(query=query)
+        request = search_pb2.SearchReq(query=query)
 
         response = client_stub.Search(request, timeout=constants.GRPC_TIMEOUT)
 
@@ -43,6 +43,10 @@ def search(token, query):
 class DocumentResult:
     """
     A class that will hold a single document that matches the search result from the Search query.
+
+    Attributes:
+        docid: :class:`str` - The matching document ID.
+        score: :class:`float` - The score of the matching document.
     """
 
     def __init__(self, docid, score):
@@ -52,59 +56,18 @@ class DocumentResult:
         :param docid:
             The matching document ID
         :type docid:
-            `string`
+            `str`
         :param score:
             The score of the matching document
         :type score:
             `float`
         """
-        self._docid = docid
-        self._score = score
+        self.docid = docid
+        self.score = score
 
-    @property
-    def docid(self):
-        """
-        Get the matching document ID
+    def __repr__(self):
+        result = "\n".join(["{}: {}".format(key, str(value).replace('\n', '\n{}'.format(' '*(2+len(key))))) for key, value in self.__dict__.items()])
+        return result
 
-        returns:
-            The matching document ID
-        :rtype:
-            `string`
-        """
-        return self._docid
-
-    @docid.setter
-    def docid(self, docid):
-        """
-        Set the matching document ID
-
-        :param docid:
-            The matching document ID
-        :type docid:
-            `string`
-        """
-        self._docid = docid
-
-    @property
-    def score(self):
-        """
-        Get the score of the matching document
-
-        returns:
-            The score of the matching document
-        :rtype:
-            `float`
-        """
-        return self._score
-
-    @score.setter
-    def score(self, score):
-        """
-        Set the score of the matching document
-
-        :param score:
-            The score of the matching document
-        :type score:
-            `float`
-        """
-        self._score = score
+    def __str__(self):
+        return self.__repr__()

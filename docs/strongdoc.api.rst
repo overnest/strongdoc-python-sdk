@@ -1,10 +1,7 @@
 strongdoc.api package
 =====================
 
-Submodules
-----------
-
-strongdoc.api.account module
+account module
 ----------------------------
 
 .. automodule:: strongdoc.api.account
@@ -12,7 +9,7 @@ strongdoc.api.account module
    :undoc-members:
    :show-inheritance:
 
-strongdoc.api.document module
+document module
 -----------------------------
 
 .. automodule:: strongdoc.api.document
@@ -20,7 +17,7 @@ strongdoc.api.document module
    :undoc-members:
    :show-inheritance:
 
-strongdoc.api.login module
+login module
 --------------------------
 
 .. automodule:: strongdoc.api.login
@@ -28,7 +25,7 @@ strongdoc.api.login module
    :undoc-members:
    :show-inheritance:
 
-strongdoc.api.search module
+search module
 ---------------------------
 
 .. automodule:: strongdoc.api.search
@@ -36,11 +33,11 @@ strongdoc.api.search module
    :undoc-members:
    :show-inheritance:
 
+billing module
+---------------------------
 
-Module contents
----------------
-
-.. automodule:: strongdoc.api
+.. automodule:: strongdoc.api.billing
    :members:
+   :member-order: bysource
    :undoc-members:
    :show-inheritance:
