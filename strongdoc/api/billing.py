@@ -1,3 +1,7 @@
+#
+# All Rights Reserved 2020
+#
+
 from strongdoc import client
 from strongdoc import constants
 from strongdoc.proto import strongdoc_pb2_grpc, billing_pb2
@@ -81,8 +85,8 @@ class TrafficCosts:
     """
     Attributes:
         cost: :class:`float`
-        incoming: :class:`float`
-        outgoing: :class:`float`
+        incoming: :class:`float` - Traffic sent to us, in MB
+        outgoing: :class:`float` - Traffic sent to you, in MB
         tier: :class:`str`
     
     """
@@ -127,9 +131,56 @@ class BillingDetails:
     def __str__(self):
         return self.__repr__()
 
+class LargeTrafficDetails:
+    """
+    Attributes:
+        large_traffic_list: list(:class:`TrafficDetails`)
+        period_start: :class:`datetime.datetime` - Start of the billing period
+        period_end: :class:`datetime.datetime` - End of the billing period
+    """
+
+    def __init__(self, proto_large_traffic):
+        self.large_traffic_list = [TrafficDetails(traffic) for traffic in proto_large_traffic.largeTraffic]
+        self.period_start = proto_large_traffic.periodStart.ToDatetime().replace(tzinfo=timezone.utc)
+        self.period_end = proto_large_traffic.periodEnd.ToDatetime().replace(tzinfo=timezone.utc)
+
+    def __repr__(self):
+        result = "\n".join(["{}: {}".format(key, str(value).replace('\n', '\n{}'.format(' '*(2+len(key))))) for key, value in self.__dict__.items()])
+        return result
+
+    def __str__(self):
+        return self.__repr__()
+
+class TrafficDetails:
+    """
+    Attributes:
+        time: :class:`datetime.datetime`
+        userid: :class:`str`
+        method: :class:`str` - "STREAM" or "UNARY"
+        uri: :class:`str` - The operation this traffic corresponds to
+        incoming: :class:`float` - Traffic sent to us, in MB
+        outgoing: :class:`float` - Traffic sent to you, in MB 
+    """
+
+    def __init__(self, proto_traffic):
+        self.time = proto_traffic.time.ToDatetime().replace(tzinfo=timezone.utc)
+        self.userid = proto_traffic.userID
+        self.method = proto_traffic.method
+        self.uri = proto_traffic.URI
+        self.incoming = proto_traffic.incoming
+        self.outgoing = proto_traffic.outgoing
+
+    def __repr__(self):
+        result = "\n".join(["{}: {}".format(key, str(value).replace('\n', '\n{}'.format(' '*(2+len(key))))) for key, value in self.__dict__.items()])
+        return result
+
+    def __str__(self):
+        return self.__repr__()
+
 def get_billing_details(token, at_time=None):
     """
     Gets the billing details at a specified time, or the current time if no time is specified.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -177,6 +228,7 @@ def get_billing_details(token, at_time=None):
 def get_billing_frequency_list(token):
     """
     Gets a list of billing frequencies.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -204,6 +256,8 @@ def get_billing_frequency_list(token):
 def set_next_billing_frequency(token, frequency, valid_from):
     """
     Sets a new billing frequency to begin at the specified time.
+    This is not allowed if you are subscribed using AWS, and will raise an error.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -258,3 +312,49 @@ def set_next_billing_frequency(token, frequency, valid_from):
                 raise err
 
         return BillingFrequency(response.nextBillingFrequency)
+
+def get_large_traffic(token, at_time=None):
+    """
+    Gets a list of large traffic events (at least 512 MB in one direction) within a specified billing period.
+    This requires an administrator privilege.
+
+    :param token: 
+        The user JWT token.
+    :type token:
+        str
+    :param at_time:
+        Optional UTC timestamp which falls within the desired billing period. Defaults to current time.
+    :type at_time:
+        datetime.datetime
+
+    :returns:
+        The requested large traffic details, or `None` if none are found for the specified time.
+    :rtype:
+        LargeTrafficDetails or None
+
+    :raises ValueError:
+        If `at_time` is not a valid datetime.
+    :raises grpc.RpcError:
+        Raised by the gRPC library to indicate non-OK-status RPC termination.
+    """
+    if at_time:
+        try:
+            at_time_proto = Timestamp()
+            at_time_proto.FromDatetime(at_time.astimezone(timezone.utc))
+        except:
+            raise ValueError("Invalid at_time datetime: ", at_time)
+
+    with client.connect_to_server_with_auth(token) as auth_conn:
+        client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
+
+        request = billing_pb2.GetLargeTrafficReq(at=at_time_proto) if at_time else billing_pb2.GetLargeTrafficReq()
+
+        try:
+            response = client_stub.GetLargeTraffic(request, timeout=constants.GRPC_TIMEOUT)
+        except _InactiveRpcError as err:
+            if err.code() == StatusCode.NOT_FOUND:
+                return None
+            else:
+                raise err
+
+        return LargeTrafficDetails(response)

@@ -1,3 +1,7 @@
+#
+# All Rights Reserved 2020
+#
+
 from strongdoc import client, constants
 from strongdoc.proto import document_pb2, documentNoStore_pb2, strongdoc_pb2_grpc
 
@@ -464,7 +468,9 @@ def remove_document(token, docid):
 
         request = document_pb2.RemoveDocumentReq(docID=docid)
 
-        client_stub.RemoveDocument(request, timeout=constants.GRPC_TIMEOUT)
+        response = client_stub.RemoveDocument(request, timeout=constants.GRPC_TIMEOUT)
+        
+        return response.status
 
 # share_document shares a document with a user
 def share_document(token, docid, userid):

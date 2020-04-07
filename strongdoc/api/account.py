@@ -1,21 +1,62 @@
+#
+# All Rights Reserved 2020
+#
+
 from strongdoc import client
 from strongdoc import constants
 from strongdoc.proto import strongdoc_pb2_grpc, accounts_pb2
 
 from datetime import timezone
 
-class UserMetadata:
+class AccountInfo:
     """
     Attributes:
-        username: :class:`str`
+        orgid: :class:`str`
+        subscription: :class:`Subscription`
+        payments: list(:class:`Payment`)
+        org_address: :class:`str`
+        multilevel_sharing: :class:`bool`
+        sharable_orgs: list(:class:`str`)
+    """
+
+    def __init__(self, proto_account_info):
+        self.orgid = proto_account_info.orgID
+        self.subscription = Subscription(proto_account_info.subscription)
+        self.payments = [Payment(payment) for payment in proto_account_info.payments]
+        self.org_address = proto_account_info.orgAddress
+        self.multilevel_sharing = proto_account_info.multiLevelShare
+        self.sharable_orgs = [sharable_org for sharable_org in proto_account_info.sharableOrgs]
+
+    def __repr__(self):
+        result = "\n".join(["{}: {}".format(key, str(value).replace('\n', '\n{}'.format(' '*(2+len(key))))) for key, value in self.__dict__.items()])
+        return result
+
+    def __str__(self):
+        return self.__repr__()
+
+class UserInfo:
+    """
+    Attributes:
         userid: :class:`str`
+        name: :class:`str`
+        email: optional :class:`str`, otherwise :class:`None`
+        orgid: optional :class:`str`, otherwise :class:`None`
         is_admin: :class:`bool`
     
     """
     def __init__(self, proto_user):
-        self.username = proto_user.userName
         self.userid = proto_user.userID
+        self.name = proto_user.userName
+        try:
+            self.email = proto_user.email
+        except:
+            self.email = None
+        try:
+            self.orgid = proto_user.orgID
+        except:
+            self.orgid = None
         self.is_admin = proto_user.isAdmin
+
 
     def __repr__(self):
         result = "\n".join(["{}: {}".format(key, str(value).replace('\n', '\n{}'.format(' '*(2+len(key))))) for key, value in self.__dict__.items()])
@@ -33,7 +74,7 @@ class Subscription:
     """
     def __init__(self, proto_subscription):
         self.type = proto_subscription.type
-        self.status = proto_subscription.type
+        self.status = proto_subscription.status
 
     def __repr__(self):
         result = "\n".join(["{}: {}".format(key, str(value).replace('\n', '\n{}'.format(' '*(2+len(key))))) for key, value in self.__dict__.items()])
@@ -160,7 +201,7 @@ def remove_organization(token, force):
         return response.success
 
 # register_user registers a user for the active organization
-def register_user(token, username, password, email, make_admin):
+def register_user(token, name, password, email, make_admin):
     """
     Registers a user for the active organization.
     This requires an administrator privilege.
@@ -170,9 +211,9 @@ def register_user(token, username, password, email, make_admin):
         The user JWT token.
     :type token:
         str
-    :param username:
-        The new user's username.
-    :type username:
+    :param name:
+        The new user's name.
+    :type name:
         str
     :param password:
         The new user's password.
@@ -198,7 +239,7 @@ def register_user(token, username, password, email, make_admin):
     with client.connect_to_server_with_auth(token) as auth_conn:
         client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
 
-        request = accounts_pb2.RegisterUserReq(userName=username, password=password, email=email, admin=make_admin)
+        request = accounts_pb2.RegisterUserReq(userName=name, password=password, email=email, admin=make_admin)
 
         response = client_stub.RegisterUser(request, timeout=constants.GRPC_TIMEOUT)
 
@@ -219,7 +260,7 @@ def list_users(token):
     :returns:
         A list of all the users in the organization.
     :rtype:
-        list(UserMetadata) 
+        list(UserInfo) 
     """
     with client.connect_to_server_with_auth(token) as auth_conn:
         client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
@@ -228,7 +269,7 @@ def list_users(token):
 
         response = client_stub.ListUsers(request, timeout=constants.GRPC_TIMEOUT)
 
-        return [UserMetadata(user) for user in response.orgUsers]
+        return [UserInfo(user) for user in response.orgUsers]
 
 # remove_user removes a user from the active organization
 def remove_user(token, userid):
@@ -329,6 +370,7 @@ def demote_user(token, userid):
 def add_sharable_org(token, orgid):
     """
     Adds another org as a sharable org.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -360,6 +402,7 @@ def add_sharable_org(token, orgid):
 def remove_sharable_org(token, orgid):
     """
     Removes a sharable org.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -391,6 +434,7 @@ def remove_sharable_org(token, orgid):
 def set_multilevel_sharing(token, enable):
     """
     Enables or disables multi-level sharing.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -421,7 +465,8 @@ def set_multilevel_sharing(token, enable):
 
 def get_account_info(token):
     """
-    Gets subscription and payment information for the active account.
+    Gets account information such as subscription details, payments, sharable orgs, etc.
+    This requires an administrator privilege.
 
     :param token: 
         The user JWT token.
@@ -431,12 +476,10 @@ def get_account_info(token):
     :raises grpc.RpcError:
         Raised by the gRPC library to indicate non-OK-status RPC termination.
 
-    Returns
-    -------
-    subscription: :class:`Subscription`
-        The subscription information
-    payments: list(:class:`Payment`)
-        A list of payment information.
+    :returns:
+        The account information
+    :rtype:
+        AccountInfo
     """
 
     with client.connect_to_server_with_auth(token) as auth_conn:
@@ -446,6 +489,30 @@ def get_account_info(token):
 
         response = client_stub.GetAccountInfo(request, timeout=constants.GRPC_TIMEOUT)
 
-        payments = [Payment(payment) for payment in response.payments]
+        return AccountInfo(response)
 
-        return Subscription(response.subscription), payments
+def get_user_info(token):
+    """
+    Gets information about the active user.
+
+    :param token: 
+        The user JWT token.
+    :type token:
+        str
+
+    :raises grpc.RpcError:
+        Raised by the gRPC library to indicate non-OK-status RPC termination.
+
+    :returns:
+        The user information
+    :rtype:
+        UserInfo
+    """
+    with client.connect_to_server_with_auth(token) as auth_conn:
+        client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
+
+        request = accounts_pb2.GetUserInfoReq()
+
+        response = client_stub.GetUserInfo(request, timeout=constants.GRPC_TIMEOUT)
+
+        return UserInfo(response)

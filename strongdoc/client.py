@@ -1,3 +1,7 @@
+#
+# All Rights Reserved 2020
+#
+
 from os import path
 from strongdoc import constants
 

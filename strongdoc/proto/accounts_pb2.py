@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='proto',
   syntax='proto3',
   serialized_options=b'\n\"com.strongsalt.strongdoc.sdk.protoB\007Account\210\001\001',
-  serialized_pb=b'\n\x0e\x61\x63\x63ounts.proto\x12\x05proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xae\x04\n\x17RegisterOrganizationReq\x12\x0f\n\x07orgName\x18\x01 \x01(\t\x12\x0f\n\x07orgAddr\x18\x02 \x01(\t\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\x14\n\x0csharableOrgs\x18\x06 \x03(\t\x12\x17\n\x0fmultiLevelShare\x18\x07 \x01(\x08\x12\x0e\n\x06source\x18\x08 \x01(\t\x12\x12\n\nsourceData\x18\t \x01(\t:\xea\x02\x92\x41\xe6\x02\n\x19*\x17RegisterOrganizationReq2\xc8\x02\x12\xc5\x02{\"orgName\": \"WhiteHouse\", \"orgAddr\": \"1600 Pennsylvania Ave NW, Washington, DC 20500\", \"userName\": \"Donald Trump\", \"password\": \"ukrainismyfriend\", \"email\": \"donald.trump@whitehouse.gov\", \"sharableOrgs\": [\"cnn\", \"fbi\", \"democrats\"], \"multiLevelShare\": true, \"source\": \"\", \"sourceData\": \"{\\\"registrationToken\\\": \\\"abcd1234\\\"}\"}\"\xb4\x01\n\x18RegisterOrganizationResp\x12\r\n\x05orgID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x14\n\x0c\x63lientSecret\x18\x03 \x01(\t:c\x92\x41`\n\x1a*\x18RegisterOrganizationResp2B\x12@{\"orgID\": \"WhiteHouse\", \"userID\": \"donald.trump@whitehouse.gov\"}\"\xe3\x01\n\x0fRegisterUserReq\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\r\n\x05\x61\x64min\x18\x04 \x01(\x08:\x8d\x01\x92\x41\x89\x01\n\x11*\x0fRegisterUserReq2t\x12r{\"userName\": \"Mike Pence\", \"password\": \"donaldismyfriend\", \"email\": \"mike.pence@whitehouse.gov\", \"admin\": \"false\"}\"f\n\x10RegisterUserResp\x12\x0e\n\x06userID\x18\x01 \x01(\t:B\x92\x41?\n\x12*\x10RegisterUserResp2)\x12\'{\"userID\": \"mike.pence@whitehouse.gov\"}\"a\n\rRemoveUserReq\x12\x0e\n\x06userID\x18\x01 \x01(\t:@\x92\x41=\n\x0f*\rRemoveUserReq2*\x12({\"userID\": \"donal.trump@whitehouse.gov\"}\"F\n\x0eRemoveUserResp\x12\r\n\x05\x63ount\x18\x01 \x01(\x03:%\x92\x41\"\n\x10*\x0eRemoveUserResp2\x0e\x12\x0c{\"count\": 1}\"c\n\x0ePromoteUserReq\x12\x0e\n\x06userID\x18\x01 \x01(\t:A\x92\x41>\n\x10*\x0ePromoteUserReq2*\x12({\"userID\": \"donald.duck@whitehouse.gov\"}\"O\n\x0fPromoteUserResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:+\x92\x41(\n\x11*\x0fPromoteUserResp2\x13\x12\x11{\"success\": true}\"b\n\rDemoteUserReq\x12\x0e\n\x06userID\x18\x01 \x01(\t:A\x92\x41>\n\x0f*\rDemoteUserReq2+\x12){\"userID\": \"donald.trump@whitehouse.gov\"}\"M\n\x0e\x44\x65moteUserResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:*\x92\x41\'\n\x10*\x0e\x44\x65moteUserResp2\x13\x12\x11{\"success\": true}\"\xb0\x01\n\x08LoginReq\x12\x0e\n\x06userID\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05orgID\x18\x03 \x01(\t:s\x92\x41p\n\n*\x08LoginReq2b\x12`{\"userID\": \"donald.trump@whitehouse.gov\", \"password\": \"ukrainismyfriend\", \"orgID\": \"WhiteHouse\"}\"I\n\tLoginResp\x12\r\n\x05token\x18\x01 \x01(\t:-\x92\x41*\n\x0b*\tLoginResp2\x1b\x12\x19{\"token\": \"blahblahblah\"}\"\x1d\n\tLogoutReq:\x10\x92\x41\r\n\x0b*\tLogoutReq\"H\n\nLogoutResp\x12\x0e\n\x06status\x18\x01 \x01(\t:*\x92\x41\'\n\x0c*\nLogoutResp2\x17\x12\x15{\"status\": \"you OUT\"}\"#\n\x0cListUsersReq:\x13\x92\x41\x10\n\x0e*\x0cListUsersReq\"\xfc\x01\n\rListUsersResp\x12.\n\x08orgUsers\x18\x01 \x03(\x0b\x32\x1c.proto.ListUsersResp.OrgUser\x1a<\n\x07OrgUser\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0f\n\x07isAdmin\x18\x03 \x01(\x08:}\x92\x41z\n\x0f*\rListUsersResp2g\x12\x65{\"orgUsers\":[{\"userName\": \"Donald Trump\", \"userID\": \"donald.trump@whitehouse.gov\", \"isAdmin\": true}]}\"W\n\x15RemoveOrganizationReq\x12\r\n\x05\x66orce\x18\x01 \x01(\x08:/\x92\x41,\n\x17*\x15RemoveOrganizationReq2\x11\x12\x0f{\"force\": true}\"\x84\x01\n\x16RemoveOrganizationResp\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x11\n\tpostponed\x18\x02 \x01(\x08:F\x92\x41\x43\n\x18*\x16RemoveOrganizationResp2\'\x12%{\"success\": true, \"postponed\": false}\"Y\n\x11\x41\x64\x64SharableOrgReq\x12\x10\n\x08newOrgID\x18\x01 \x01(\t:2\x92\x41/\n\x13*\x11\x41\x64\x64SharableOrgReq2\x18\x12\x16{\"newOrgID\": \"string\"}\"U\n\x12\x41\x64\x64SharableOrgResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:.\x92\x41+\n\x14*\x12\x41\x64\x64SharableOrgResp2\x13\x12\x11{\"success\": true}\"e\n\x14RemoveSharableOrgReq\x12\x13\n\x0bremoveOrgID\x18\x01 \x01(\t:8\x92\x41\x35\n\x16*\x14RemoveSharableOrgReq2\x1b\x12\x19{\"removeOrgID\": \"string\"}\"[\n\x15RemoveSharableOrgResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:1\x92\x41.\n\x17*\x15RemoveSharableOrgResp2\x13\x12\x11{\"success\": true}\"]\n\x17SetMultiLevelSharingReq\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08:2\x92\x41/\n\x19*\x17SetMultiLevelSharingReq2\x12\x12\x10{\"enable\": true}\"a\n\x18SetMultiLevelSharingResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:4\x92\x41\x31\n\x1a*\x18SetMultiLevelSharingResp2\x13\x12\x11{\"success\": true}\"q\n\x0cSubscription\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t:C\x92\x41@\n\x0e*\x0cSubscription2.\x12,{\"type\":\"Credit Card\",\"status\":\"Subscribed\"}\"\xf5\x02\n\x07Payment\x12,\n\x08\x62illedAt\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bperiodStart\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x01\x12\x0e\n\x06status\x18\x05 \x01(\t:\xbb\x01\x92\x41\xb7\x01\n\t*\x07Payment2\xa9\x01\x12\xa6\x01{\"billedAt\": \"2020-02-01T12:30:15.123Z\", \"periodStart\": \"2020-01-01T00:00:00.000Z\", \"periodEnd\": \"2020-02-01T00:00:00.000Z\", \"amount\": 52.16, \"status\": \"No Payment\" }\"\x13\n\x11GetAccountInfoReq\"\xfb\x02\n\x12GetAccountInfoResp\x12)\n\x0csubscription\x18\x01 \x01(\x0b\x32\x13.proto.Subscription\x12 \n\x08payments\x18\x02 \x03(\x0b\x32\x0e.proto.Payment:\x97\x02\x92\x41\x93\x02\n\x14*\x12GetAccountInfoResp2\xfa\x01\x12\xf7\x01{\"subscription\":{\"type\":\"Credit Card\",\"status\":\"Subscribed\"}, \"payments\":[{\"billedAt\": \"2020-02-01T12:30:15.123Z\", \"periodStart\": \"2020-01-01T00:00:00.000Z\", \"periodEnd\": \"2020-02-01T00:00:00.000Z\", \"amount\": 52.16, \"status\": \"Payment Success\" }]}B0\n\"com.strongsalt.strongdoc.sdk.protoB\x07\x41\x63\x63ount\x88\x01\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0e\x61\x63\x63ounts.proto\x12\x05proto\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xae\x04\n\x17RegisterOrganizationReq\x12\x0f\n\x07orgName\x18\x01 \x01(\t\x12\x0f\n\x07orgAddr\x18\x02 \x01(\t\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\x14\n\x0csharableOrgs\x18\x06 \x03(\t\x12\x17\n\x0fmultiLevelShare\x18\x07 \x01(\x08\x12\x0e\n\x06source\x18\x08 \x01(\t\x12\x12\n\nsourceData\x18\t \x01(\t:\xea\x02\x92\x41\xe6\x02\n\x19*\x17RegisterOrganizationReq2\xc8\x02\x12\xc5\x02{\"orgName\": \"WhiteHouse\", \"orgAddr\": \"1600 Pennsylvania Ave NW, Washington, DC 20500\", \"userName\": \"Donald Trump\", \"password\": \"ukrainismyfriend\", \"email\": \"donald.trump@whitehouse.gov\", \"sharableOrgs\": [\"cnn\", \"fbi\", \"democrats\"], \"multiLevelShare\": true, \"source\": \"\", \"sourceData\": \"{\\\"registrationToken\\\": \\\"abcd1234\\\"}\"}\"\xb4\x01\n\x18RegisterOrganizationResp\x12\r\n\x05orgID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x14\n\x0c\x63lientSecret\x18\x03 \x01(\t:c\x92\x41`\n\x1a*\x18RegisterOrganizationResp2B\x12@{\"orgID\": \"WhiteHouse\", \"userID\": \"donald.trump@whitehouse.gov\"}\"\xe3\x01\n\x0fRegisterUserReq\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\r\n\x05\x61\x64min\x18\x04 \x01(\x08:\x8d\x01\x92\x41\x89\x01\n\x11*\x0fRegisterUserReq2t\x12r{\"userName\": \"Mike Pence\", \"password\": \"donaldismyfriend\", \"email\": \"mike.pence@whitehouse.gov\", \"admin\": \"false\"}\"f\n\x10RegisterUserResp\x12\x0e\n\x06userID\x18\x01 \x01(\t:B\x92\x41?\n\x12*\x10RegisterUserResp2)\x12\'{\"userID\": \"mike.pence@whitehouse.gov\"}\"a\n\rRemoveUserReq\x12\x0e\n\x06userID\x18\x01 \x01(\t:@\x92\x41=\n\x0f*\rRemoveUserReq2*\x12({\"userID\": \"donal.trump@whitehouse.gov\"}\"F\n\x0eRemoveUserResp\x12\r\n\x05\x63ount\x18\x01 \x01(\x03:%\x92\x41\"\n\x10*\x0eRemoveUserResp2\x0e\x12\x0c{\"count\": 1}\"c\n\x0ePromoteUserReq\x12\x0e\n\x06userID\x18\x01 \x01(\t:A\x92\x41>\n\x10*\x0ePromoteUserReq2*\x12({\"userID\": \"donald.duck@whitehouse.gov\"}\"O\n\x0fPromoteUserResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:+\x92\x41(\n\x11*\x0fPromoteUserResp2\x13\x12\x11{\"success\": true}\"b\n\rDemoteUserReq\x12\x0e\n\x06userID\x18\x01 \x01(\t:A\x92\x41>\n\x0f*\rDemoteUserReq2+\x12){\"userID\": \"donald.trump@whitehouse.gov\"}\"M\n\x0e\x44\x65moteUserResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:*\x92\x41\'\n\x10*\x0e\x44\x65moteUserResp2\x13\x12\x11{\"success\": true}\"\xb0\x01\n\x08LoginReq\x12\x0e\n\x06userID\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05orgID\x18\x03 \x01(\t:s\x92\x41p\n\n*\x08LoginReq2b\x12`{\"userID\": \"donald.trump@whitehouse.gov\", \"password\": \"ukrainismyfriend\", \"orgID\": \"WhiteHouse\"}\"I\n\tLoginResp\x12\r\n\x05token\x18\x01 \x01(\t:-\x92\x41*\n\x0b*\tLoginResp2\x1b\x12\x19{\"token\": \"blahblahblah\"}\"\x1d\n\tLogoutReq:\x10\x92\x41\r\n\x0b*\tLogoutReq\"H\n\nLogoutResp\x12\x0e\n\x06status\x18\x01 \x01(\t:*\x92\x41\'\n\x0c*\nLogoutResp2\x17\x12\x15{\"status\": \"you OUT\"}\"#\n\x0cListUsersReq:\x13\x92\x41\x10\n\x0e*\x0cListUsersReq\"\xfc\x01\n\rListUsersResp\x12.\n\x08orgUsers\x18\x01 \x03(\x0b\x32\x1c.proto.ListUsersResp.OrgUser\x1a<\n\x07OrgUser\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0f\n\x07isAdmin\x18\x03 \x01(\x08:}\x92\x41z\n\x0f*\rListUsersResp2g\x12\x65{\"orgUsers\":[{\"userName\": \"Donald Trump\", \"userID\": \"donald.trump@whitehouse.gov\", \"isAdmin\": true}]}\"W\n\x15RemoveOrganizationReq\x12\r\n\x05\x66orce\x18\x01 \x01(\x08:/\x92\x41,\n\x17*\x15RemoveOrganizationReq2\x11\x12\x0f{\"force\": true}\"\x84\x01\n\x16RemoveOrganizationResp\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x11\n\tpostponed\x18\x02 \x01(\x08:F\x92\x41\x43\n\x18*\x16RemoveOrganizationResp2\'\x12%{\"success\": true, \"postponed\": false}\"Y\n\x11\x41\x64\x64SharableOrgReq\x12\x10\n\x08newOrgID\x18\x01 \x01(\t:2\x92\x41/\n\x13*\x11\x41\x64\x64SharableOrgReq2\x18\x12\x16{\"newOrgID\": \"string\"}\"U\n\x12\x41\x64\x64SharableOrgResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:.\x92\x41+\n\x14*\x12\x41\x64\x64SharableOrgResp2\x13\x12\x11{\"success\": true}\"e\n\x14RemoveSharableOrgReq\x12\x13\n\x0bremoveOrgID\x18\x01 \x01(\t:8\x92\x41\x35\n\x16*\x14RemoveSharableOrgReq2\x1b\x12\x19{\"removeOrgID\": \"string\"}\"[\n\x15RemoveSharableOrgResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:1\x92\x41.\n\x17*\x15RemoveSharableOrgResp2\x13\x12\x11{\"success\": true}\"]\n\x17SetMultiLevelSharingReq\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08:2\x92\x41/\n\x19*\x17SetMultiLevelSharingReq2\x12\x12\x10{\"enable\": true}\"a\n\x18SetMultiLevelSharingResp\x12\x0f\n\x07success\x18\x01 \x01(\x08:4\x92\x41\x31\n\x1a*\x18SetMultiLevelSharingResp2\x13\x12\x11{\"success\": true}\"q\n\x0cSubscription\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t:C\x92\x41@\n\x0e*\x0cSubscription2.\x12,{\"type\":\"Credit Card\",\"status\":\"Subscribed\"}\"\xf5\x02\n\x07Payment\x12,\n\x08\x62illedAt\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bperiodStart\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x01\x12\x0e\n\x06status\x18\x05 \x01(\t:\xbb\x01\x92\x41\xb7\x01\n\t*\x07Payment2\xa9\x01\x12\xa6\x01{\"billedAt\": \"2020-02-01T12:30:15.123Z\", \"periodStart\": \"2020-01-01T00:00:00.000Z\", \"periodEnd\": \"2020-02-01T00:00:00.000Z\", \"amount\": 52.16, \"status\": \"No Payment\" }\"\x13\n\x11GetAccountInfoReq\"\xcc\x04\n\x12GetAccountInfoResp\x12\r\n\x05orgID\x18\x01 \x01(\t\x12)\n\x0csubscription\x18\x02 \x01(\x0b\x32\x13.proto.Subscription\x12 \n\x08payments\x18\x03 \x03(\x0b\x32\x0e.proto.Payment\x12\x12\n\norgAddress\x18\x04 \x01(\t\x12\x17\n\x0fmultiLevelShare\x18\x05 \x01(\x08\x12\x14\n\x0csharableOrgs\x18\x06 \x03(\t:\x96\x03\x92\x41\x92\x03\n\x14*\x12GetAccountInfoResp2\xf9\x02\x12\xf6\x02{\"subscription\":{\"type\":\"Credit Card\",\"status\":\"Subscribed\"}, \"payments\":[{\"billedAt\": \"2020-02-01T12:30:15.123Z\", \"periodStart\": \"2020-01-01T00:00:00.000Z\", \"periodEnd\": \"2020-02-01T00:00:00.000Z\", \"amount\": 52.16, \"status\": \"Payment Success\" }], \"orgAddress\": \"1600 Pennsylvania Ave NW, Washington, DC 20500\", \"multiLevelShare\": true, \"sharableOrgs\": [\"cnn\", \"democrats\"]}\"\x10\n\x0eGetUserInfoReq\"\xd3\x01\n\x0fGetUserInfoResp\x12\x0e\n\x06userID\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\r\n\x05orgID\x18\x04 \x01(\t\x12\x0f\n\x07isAdmin\x18\x05 \x01(\x08:o\x92\x41l\n\x11*\x0fGetUserInfoResp2W\x12U{\"email\": \"donald.trump@whitehouse.gov\", \"userName\": \"Donald Trump\", \"role\": \"admin\"}B0\n\"com.strongsalt.strongdoc.sdk.protoB\x07\x41\x63\x63ount\x88\x01\x01\x62\x06proto3'
   ,
   dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -1042,15 +1042,43 @@ _GETACCOUNTINFORESP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subscription', full_name='proto.GetAccountInfoResp.subscription', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='orgID', full_name='proto.GetAccountInfoResp.orgID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subscription', full_name='proto.GetAccountInfoResp.subscription', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='payments', full_name='proto.GetAccountInfoResp.payments', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      name='payments', full_name='proto.GetAccountInfoResp.payments', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='orgAddress', full_name='proto.GetAccountInfoResp.orgAddress', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='multiLevelShare', full_name='proto.GetAccountInfoResp.multiLevelShare', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sharableOrgs', full_name='proto.GetAccountInfoResp.sharableOrgs', index=5,
+      number=6, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1061,14 +1089,97 @@ _GETACCOUNTINFORESP = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'\222A\223\002\n\024*\022GetAccountInfoResp2\372\001\022\367\001{\"subscription\":{\"type\":\"Credit Card\",\"status\":\"Subscribed\"}, \"payments\":[{\"billedAt\": \"2020-02-01T12:30:15.123Z\", \"periodStart\": \"2020-01-01T00:00:00.000Z\", \"periodEnd\": \"2020-02-01T00:00:00.000Z\", \"amount\": 52.16, \"status\": \"Payment Success\" }]}',
+  serialized_options=b'\222A\222\003\n\024*\022GetAccountInfoResp2\371\002\022\366\002{\"subscription\":{\"type\":\"Credit Card\",\"status\":\"Subscribed\"}, \"payments\":[{\"billedAt\": \"2020-02-01T12:30:15.123Z\", \"periodStart\": \"2020-01-01T00:00:00.000Z\", \"periodEnd\": \"2020-02-01T00:00:00.000Z\", \"amount\": 52.16, \"status\": \"Payment Success\" }], \"orgAddress\": \"1600 Pennsylvania Ave NW, Washington, DC 20500\", \"multiLevelShare\": true, \"sharableOrgs\": [\"cnn\", \"democrats\"]}',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=3670,
-  serialized_end=4049,
+  serialized_end=4258,
+)
+
+
+_GETUSERINFOREQ = _descriptor.Descriptor(
+  name='GetUserInfoReq',
+  full_name='proto.GetUserInfoReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4260,
+  serialized_end=4276,
+)
+
+
+_GETUSERINFORESP = _descriptor.Descriptor(
+  name='GetUserInfoResp',
+  full_name='proto.GetUserInfoResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='userID', full_name='proto.GetUserInfoResp.userID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='proto.GetUserInfoResp.email', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='userName', full_name='proto.GetUserInfoResp.userName', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='orgID', full_name='proto.GetUserInfoResp.orgID', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='isAdmin', full_name='proto.GetUserInfoResp.isAdmin', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222Al\n\021*\017GetUserInfoResp2W\022U{\"email\": \"donald.trump@whitehouse.gov\", \"userName\": \"Donald Trump\", \"role\": \"admin\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4279,
+  serialized_end=4490,
 )
 
 _LISTUSERSRESP_ORGUSER.containing_type = _LISTUSERSRESP
@@ -1106,6 +1217,8 @@ DESCRIPTOR.message_types_by_name['Subscription'] = _SUBSCRIPTION
 DESCRIPTOR.message_types_by_name['Payment'] = _PAYMENT
 DESCRIPTOR.message_types_by_name['GetAccountInfoReq'] = _GETACCOUNTINFOREQ
 DESCRIPTOR.message_types_by_name['GetAccountInfoResp'] = _GETACCOUNTINFORESP
+DESCRIPTOR.message_types_by_name['GetUserInfoReq'] = _GETUSERINFOREQ
+DESCRIPTOR.message_types_by_name['GetUserInfoResp'] = _GETUSERINFORESP
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 RegisterOrganizationReq = _reflection.GeneratedProtocolMessageType('RegisterOrganizationReq', (_message.Message,), {
@@ -1312,6 +1425,20 @@ GetAccountInfoResp = _reflection.GeneratedProtocolMessageType('GetAccountInfoRes
   })
 _sym_db.RegisterMessage(GetAccountInfoResp)
 
+GetUserInfoReq = _reflection.GeneratedProtocolMessageType('GetUserInfoReq', (_message.Message,), {
+  'DESCRIPTOR' : _GETUSERINFOREQ,
+  '__module__' : 'accounts_pb2'
+  # @@protoc_insertion_point(class_scope:proto.GetUserInfoReq)
+  })
+_sym_db.RegisterMessage(GetUserInfoReq)
+
+GetUserInfoResp = _reflection.GeneratedProtocolMessageType('GetUserInfoResp', (_message.Message,), {
+  'DESCRIPTOR' : _GETUSERINFORESP,
+  '__module__' : 'accounts_pb2'
+  # @@protoc_insertion_point(class_scope:proto.GetUserInfoResp)
+  })
+_sym_db.RegisterMessage(GetUserInfoResp)
+
 
 DESCRIPTOR._options = None
 _REGISTERORGANIZATIONREQ._options = None
@@ -1341,4 +1468,5 @@ _SETMULTILEVELSHARINGRESP._options = None
 _SUBSCRIPTION._options = None
 _PAYMENT._options = None
 _GETACCOUNTINFORESP._options = None
+_GETUSERINFORESP._options = None
 # @@protoc_insertion_point(module_scope)
