@@ -1,3 +1,7 @@
+#
+# All Rights Reserved 2020
+#
+
 from typing import List
 
 from strongdoc import client

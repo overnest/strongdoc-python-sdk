@@ -158,10 +158,20 @@ class StrongDocServiceStub(object):
         request_serializer=billing__pb2.SetNextBillingFrequencyReq.SerializeToString,
         response_deserializer=billing__pb2.SetNextBillingFrequencyResp.FromString,
         )
+    self.GetLargeTraffic = channel.unary_unary(
+        '/proto.StrongDocService/GetLargeTraffic',
+        request_serializer=billing__pb2.GetLargeTrafficReq.SerializeToString,
+        response_deserializer=billing__pb2.GetLargeTrafficResp.FromString,
+        )
     self.GetAccountInfo = channel.unary_unary(
         '/proto.StrongDocService/GetAccountInfo',
         request_serializer=accounts__pb2.GetAccountInfoReq.SerializeToString,
         response_deserializer=accounts__pb2.GetAccountInfoResp.FromString,
+        )
+    self.GetUserInfo = channel.unary_unary(
+        '/proto.StrongDocService/GetUserInfo',
+        request_serializer=accounts__pb2.GetUserInfoReq.SerializeToString,
+        response_deserializer=accounts__pb2.GetUserInfoResp.FromString,
         )
 
 
@@ -480,8 +490,28 @@ class StrongDocServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetLargeTraffic(self, request, context):
+    """Obtain the list of large traffic usages
+
+    Requires Administrator privilege
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetAccountInfo(self, request, context):
     """Obtain information about the account
+
+    Requires Administrator privilege
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetUserInfo(self, request, context):
+    """Obtain information about logged user
 
     Requires Login
     """
@@ -632,10 +662,20 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
           request_deserializer=billing__pb2.SetNextBillingFrequencyReq.FromString,
           response_serializer=billing__pb2.SetNextBillingFrequencyResp.SerializeToString,
       ),
+      'GetLargeTraffic': grpc.unary_unary_rpc_method_handler(
+          servicer.GetLargeTraffic,
+          request_deserializer=billing__pb2.GetLargeTrafficReq.FromString,
+          response_serializer=billing__pb2.GetLargeTrafficResp.SerializeToString,
+      ),
       'GetAccountInfo': grpc.unary_unary_rpc_method_handler(
           servicer.GetAccountInfo,
           request_deserializer=accounts__pb2.GetAccountInfoReq.FromString,
           response_serializer=accounts__pb2.GetAccountInfoResp.SerializeToString,
+      ),
+      'GetUserInfo': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUserInfo,
+          request_deserializer=accounts__pb2.GetUserInfoReq.FromString,
+          response_serializer=accounts__pb2.GetUserInfoResp.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

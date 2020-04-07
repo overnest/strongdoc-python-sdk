@@ -1,3 +1,7 @@
+#
+# All Rights Reserved 2020
+#
+
 from strongdoc import client
 from strongdoc import constants
 from strongdoc.proto import accounts_pb2, strongdoc_pb2_grpc
