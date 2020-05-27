@@ -12,6 +12,7 @@ class AccountInfo:
     """
     Attributes:
         orgid: :class:`str`
+        org_email: :class:`str`
         subscription: :class:`Subscription`
         payments: list(:class:`Payment`)
         org_address: :class:`str`
@@ -21,6 +22,7 @@ class AccountInfo:
 
     def __init__(self, proto_account_info):
         self.orgid = proto_account_info.orgID
+        self.org_email = proto_account_info.orgEmail
         self.subscription = Subscription(proto_account_info.subscription)
         self.payments = [Payment(payment) for payment in proto_account_info.payments]
         self.org_address = proto_account_info.orgAddress
@@ -109,7 +111,7 @@ class Payment:
 
 
 # _register_organization creates an organization
-def _register_organization(org_name, org_addr, admin_name, admin_password, admin_email, source, source_data):
+def _register_organization(org_name, org_email, org_addr, admin_name, admin_password, admin_email, source, source_data):
     """
     Registers a new organization. A new administrator user will also be created.
     New users can be added using this administrator account.
@@ -118,6 +120,10 @@ def _register_organization(org_name, org_addr, admin_name, admin_password, admin
     :param org_name:
         The organization name to create.
     :type org_name:
+        str
+    :param org_email:
+        The organization email address.
+    :type org_email:
         str
     :param org_addr:
         The organization address.
@@ -156,9 +162,9 @@ def _register_organization(org_name, org_addr, admin_name, admin_password, admin
     with client.connect_to_server_with_no_auth() as no_auth_conn:
         client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(no_auth_conn)
 
-        request = accounts_pb2.RegisterOrganizationReq(orgName=org_name,
+        request = accounts_pb2.RegisterOrganizationReq(orgName=org_name, orgEmail=org_email,
                                                            orgAddr=org_addr, userName=admin_name,
-                                                           password=admin_password, email=admin_email, 
+                                                           password=admin_password, adminEmail=admin_email, 
                                                            source=source, sourceData=source_data)
 
         response = client_stub.RegisterOrganization(request, timeout=constants.GRPC_TIMEOUT)
@@ -491,6 +497,41 @@ def get_account_info(token):
 
         return AccountInfo(response)
 
+def set_account_info(token, org_email, org_address):
+    """
+    Set organization account info.
+    This requires an administrator privilege.
+
+    :param token: 
+        The user JWT token.
+    :type token:
+        str
+    :param email:
+        The organization email address. Must be a valid email address.
+    :type email:
+        str
+    :param address:
+        The organization address.
+    :type address:
+        str
+
+    :raises grpc.RpcError:
+        Raised by the gRPC library to indicate non-OK-status RPC termination.
+        
+    :returns:
+        Whether the change was a success.
+    :rtype:
+        bool
+    """
+    with client.connect_to_server_with_auth(token) as auth_conn:
+        client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
+
+        request = accounts_pb2.SetAccountInfoReq(orgEmail=org_email, orgAddress=org_address)
+
+        response = client_stub.SetAccountInfo(request, timeout=constants.GRPC_TIMEOUT)
+
+        return response.success
+
 def get_user_info(token):
     """
     Gets information about the active user.
@@ -508,6 +549,7 @@ def get_user_info(token):
     :rtype:
         UserInfo
     """
+
     with client.connect_to_server_with_auth(token) as auth_conn:
         client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
 
@@ -516,3 +558,73 @@ def get_user_info(token):
         response = client_stub.GetUserInfo(request, timeout=constants.GRPC_TIMEOUT)
 
         return UserInfo(response)
+
+def set_user_info(token, name, email):
+    """
+    Set user info.
+
+    :param token: 
+        The user JWT token.
+    :type token:
+        str
+    :param name:
+        The user's name. Cannot be an empty string.
+    :type name:
+        str
+    :param email:
+        The user's email address. Must be a valid email address.
+    :type email:
+        str
+
+    :raises grpc.RpcError:
+        Raised by the gRPC library to indicate non-OK-status RPC termination.
+        
+    :returns:
+        Whether the change was a success.
+    :rtype:
+        bool
+    """
+
+    with client.connect_to_server_with_auth(token) as auth_conn:
+        client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
+
+        request = accounts_pb2.SetUserInfoReq(name=name, email=email)
+
+        response = client_stub.SetUserInfo(request, timeout=constants.GRPC_TIMEOUT)
+
+        return response.success
+
+def change_user_password(token, old_password, new_password):
+    """
+    Change user password.
+
+    :param token: 
+        The user JWT token.
+    :type token:
+        str
+    :param old_password:
+        The user's current password.
+    :type old_password:
+        str
+    :param new_password:
+        The user's new password.
+    :type new_password:
+        str
+
+    :raises grpc.RpcError:
+        Raised by the gRPC library to indicate non-OK-status RPC termination.
+        
+    :returns:
+        Whether the change was a success.
+    :rtype:
+        bool
+    """
+
+    with client.connect_to_server_with_auth(token) as auth_conn:
+        client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
+
+        request = accounts_pb2.ChangeUserPasswordReq(oldPassword=old_password, newPassword=new_password)
+
+        response = client_stub.ChangeUserPassword(request, timeout=constants.GRPC_TIMEOUT)
+
+        return response.success
