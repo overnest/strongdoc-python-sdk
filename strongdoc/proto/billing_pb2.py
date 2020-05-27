@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='proto',
   syntax='proto3',
   serialized_options=b'\n\"com.strongsalt.strongdoc.sdk.protoB\007Billing\210\001\001',
-  serialized_pb=b'\n\rbilling.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a,protoc-gen-swagger/options/annotations.proto\">\n\x14GetBillingDetailsReq\x12&\n\x02\x61t\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x98\x06\n\x15GetBillingDetailsResp\x12/\n\x0bperiodStart\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\ttotalCost\x18\x03 \x01(\x01\x12\'\n\tdocuments\x18\x04 \x01(\x0b\x32\x14.proto.DocumentCosts\x12\"\n\x06search\x18\x05 \x01(\x0b\x32\x12.proto.SearchCosts\x12$\n\x07traffic\x18\x06 \x01(\x0b\x32\x13.proto.TrafficCosts\x12\x31\n\x10\x62illingFrequency\x18\x07 \x01(\x0b\x32\x17.proto.BillingFrequency:\xe5\x03\x92\x41\xe1\x03\n\x17*\x15GetBillingDetailsResp2\xc5\x03\x12\xc2\x03{\"periodStart\": \"2020-02-10T12:30:15.123Z\", \"periodEnd\": \"2020-03-01T00:00:00Z\", \"totalCost\": 800548.00, \"documents\": {\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}, \"search\": {\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}, \"traffic\": {\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}, \"billingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"\x1c\n\x1aGetBillingFrequencyListReq\"\xdb\x01\n\x1bGetBillingFrequencyListResp\x12\x35\n\x14\x62illingFrequencyList\x18\x01 \x03(\x0b\x32\x17.proto.BillingFrequency:\x84\x01\x92\x41\x80\x01\n\x1d*\x1bGetBillingFrequencyListResp2_\x12]{\"billingFrequencyList\": [{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}]}\"\xdb\x01\n\x1aSetNextBillingFrequencyReq\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:f\x92\x41\x63\n\x1c*\x1aSetNextBillingFrequencyReq2C\x12\x41{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}\"\xd8\x01\n\x1bSetNextBillingFrequencyResp\x12\x35\n\x14nextBillingFrequency\x18\x01 \x01(\x0b\x32\x17.proto.BillingFrequency:\x81\x01\x92\x41~\n\x1d*\x1bSetNextBillingFrequencyResp2]\x12[{\"nextBillingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"<\n\x12GetLargeTrafficReq\x12&\n\x02\x61t\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xd4\x04\n\x13GetLargeTrafficResp\x12*\n\x0clargeTraffic\x18\x01 \x03(\x0b\x32\x14.proto.TrafficDetail\x12/\n\x0bperiodStart\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:\xb0\x03\x92\x41\xac\x03\n\x15*\x13GetLargeTrafficResp2\x92\x03\x12\x8f\x03{\"largeTraffic\": [{\"time\": \"2020-03-20T11:05:11.956889144Z\",\"userID\": \"user@company.com\",\"method\": \"GET\",\"URI\": \"/v1/account/billing\",\"incoming\": 810,\"outgoing\": 392},{\"time\":\"2020-03-20T11:30:34.630333618Z\",\"userID\": \"user2@company.com\",\"method\": \"GET\",\"URI\": \"/v1/account/largeTraffic\",\"incoming\": 816,\"outgoing\": 95}],\"periodStart\": \"2020-03-20T11:04:47.210Z\",\"periodEnd\": \"2020-04-01T00:00:00Z\"}\"\x8a\x01\n\rTrafficDetail\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0e\n\x06method\x18\x03 \x01(\t\x12\x0b\n\x03URI\x18\x04 \x01(\t\x12\x10\n\x08incoming\x18\x05 \x01(\x01\x12\x10\n\x08outgoing\x18\x06 \x01(\x01\"\x97\x02\n\x10\x42illingFrequency\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07validTo\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:\x7f\x92\x41|\n\x12*\x10\x42illingFrequency2f\x12\x64{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-03-01T00:00:15.123Z\", \"validTo\": \"2020-06-01T00:00:00Z\"}\"\x96\x01\n\rDocumentCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01\x12\x0c\n\x04tier\x18\x03 \x01(\t:[\x92\x41X\n\x10*\x0e\x44ocumentsCosts2D\x12\x42{\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}\"\x93\x01\n\x0bSearchCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01\x12\x0c\n\x04tier\x18\x03 \x01(\t:Z\x92\x41W\n\r*\x0bSearchCosts2F\x12\x44{\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}\"\xbc\x01\n\x0cTrafficCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x10\n\x08incoming\x18\x02 \x01(\x01\x12\x10\n\x08outgoing\x18\x03 \x01(\x01\x12\x0c\n\x04tier\x18\x04 \x01(\t:l\x92\x41i\n\x0e*\x0cTrafficCosts2W\x12U{\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}*6\n\x0cTimeInterval\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x30\n\"com.strongsalt.strongdoc.sdk.protoB\x07\x42illing\x88\x01\x01\x62\x06proto3'
+  serialized_pb=b'\n\rbilling.proto\x12\x05proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a,protoc-gen-swagger/options/annotations.proto\">\n\x14GetBillingDetailsReq\x12&\n\x02\x61t\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x98\x06\n\x15GetBillingDetailsResp\x12/\n\x0bperiodStart\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\ttotalCost\x18\x03 \x01(\x01\x12\'\n\tdocuments\x18\x04 \x01(\x0b\x32\x14.proto.DocumentCosts\x12\"\n\x06search\x18\x05 \x01(\x0b\x32\x12.proto.SearchCosts\x12$\n\x07traffic\x18\x06 \x01(\x0b\x32\x13.proto.TrafficCosts\x12\x31\n\x10\x62illingFrequency\x18\x07 \x01(\x0b\x32\x17.proto.BillingFrequency:\xe5\x03\x92\x41\xe1\x03\n\x17*\x15GetBillingDetailsResp2\xc5\x03\x12\xc2\x03{\"periodStart\": \"2020-02-10T12:30:15.123Z\", \"periodEnd\": \"2020-03-01T00:00:00Z\", \"totalCost\": 800548.00, \"documents\": {\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}, \"search\": {\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}, \"traffic\": {\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}, \"billingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"\x1c\n\x1aGetBillingFrequencyListReq\"\xdb\x01\n\x1bGetBillingFrequencyListResp\x12\x35\n\x14\x62illingFrequencyList\x18\x01 \x03(\x0b\x32\x17.proto.BillingFrequency:\x84\x01\x92\x41\x80\x01\n\x1d*\x1bGetBillingFrequencyListResp2_\x12]{\"billingFrequencyList\": [{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}]}\"\x14\n\x12ListCreditCardsReq\"\xfc\x01\n\x13ListCreditCardsResp\x12#\n\x0e\x63reditCardList\x18\x01 \x03(\x0b\x32\x0b.proto.Card:\xbf\x01\x92\x41\xbb\x01\n\x15*\x13listCreditCardsResp2\xa1\x01\x12\x9e\x01{\"creditCardList\": [{\"id\": \"card_1GhzeM2eZvKYlo2CrJT4qB4r\", \"brand\": \"American Express\", \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2021, \"last4\": \"8431\"}]}\"j\n\x13\x41\x64\x64PaymentMethodReq\x12\x0c\n\x04pmID\x18\x01 \x01(\t:E\x92\x41\x42\n\x15*\x13\x41\x64\x64PaymentMethodReq2)\x12\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}\"l\n\x14\x41\x64\x64PaymentMethodResp\x12\x0c\n\x04pmID\x18\x01 \x01(\t:F\x92\x41\x43\n\x16*\x14\x41\x64\x64PaymentMethodResp2)\x12\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}\"x\n\x1aSetDefaultPaymentMethodReq\x12\x0c\n\x04pmID\x18\x01 \x01(\t:L\x92\x41I\n\x1c*\x1aSetDefaultPaymentMethodReq2)\x12\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}\"z\n\x1bSetDefaultPaymentMethodResp\x12\x0c\n\x04pmID\x18\x01 \x01(\t:M\x92\x41J\n\x1d*\x1bSetDefaultPaymentMethodResp2)\x12\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}\"p\n\x16RemovePaymentMethodReq\x12\x0c\n\x04pmID\x18\x01 \x01(\t:H\x92\x41\x45\n\x18*\x16RemovePaymentMethodReq2)\x12\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}\"r\n\x17RemovePaymentMethodResp\x12\x0c\n\x04pmID\x18\x01 \x01(\t:I\x92\x41\x46\n\x19*\x17RemovePaymentMethodResp2)\x12\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}\"\xdb\x01\n\x1aSetNextBillingFrequencyReq\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:f\x92\x41\x63\n\x1c*\x1aSetNextBillingFrequencyReq2C\x12\x41{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}\"\xd8\x01\n\x1bSetNextBillingFrequencyResp\x12\x35\n\x14nextBillingFrequency\x18\x01 \x01(\x0b\x32\x17.proto.BillingFrequency:\x81\x01\x92\x41~\n\x1d*\x1bSetNextBillingFrequencyResp2]\x12[{\"nextBillingFrequency\": {\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-02-10T12:30:15.123Z\"}}\"<\n\x12GetLargeTrafficReq\x12&\n\x02\x61t\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xd4\x04\n\x13GetLargeTrafficResp\x12*\n\x0clargeTraffic\x18\x01 \x03(\x0b\x32\x14.proto.TrafficDetail\x12/\n\x0bperiodStart\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tperiodEnd\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:\xb0\x03\x92\x41\xac\x03\n\x15*\x13GetLargeTrafficResp2\x92\x03\x12\x8f\x03{\"largeTraffic\": [{\"time\": \"2020-03-20T11:05:11.956889144Z\",\"userID\": \"user@company.com\",\"method\": \"GET\",\"URI\": \"/v1/account/billing\",\"incoming\": 810,\"outgoing\": 392},{\"time\":\"2020-03-20T11:30:34.630333618Z\",\"userID\": \"user2@company.com\",\"method\": \"GET\",\"URI\": \"/v1/account/largeTraffic\",\"incoming\": 816,\"outgoing\": 95}],\"periodStart\": \"2020-03-20T11:04:47.210Z\",\"periodEnd\": \"2020-04-01T00:00:00Z\"}\"\x8a\x01\n\rTrafficDetail\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0e\n\x06method\x18\x03 \x01(\t\x12\x0b\n\x03URI\x18\x04 \x01(\t\x12\x10\n\x08incoming\x18\x05 \x01(\x01\x12\x10\n\x08outgoing\x18\x06 \x01(\x01\"\x97\x02\n\x10\x42illingFrequency\x12&\n\tfrequency\x18\x01 \x01(\x0e\x32\x13.proto.TimeInterval\x12-\n\tvalidFrom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07validTo\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp:\x7f\x92\x41|\n\x12*\x10\x42illingFrequency2f\x12\x64{\"frequency\": \"MONTHLY\", \"validFrom\": \"2020-03-01T00:00:15.123Z\", \"validTo\": \"2020-06-01T00:00:00Z\"}\"\x96\x01\n\rDocumentCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01\x12\x0c\n\x04tier\x18\x03 \x01(\t:[\x92\x41X\n\x10*\x0e\x44ocumentsCosts2D\x12\x42{\"cost\": 16.08, \"size\": 148193280, \"tier\": \"Document Storage Mid\"}\"\x93\x01\n\x0bSearchCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x0c\n\x04size\x18\x02 \x01(\x01\x12\x0c\n\x04tier\x18\x03 \x01(\t:Z\x92\x41W\n\r*\x0bSearchCosts2F\x12\x44{\"cost\": 2.00, \"size\": 58982400, \"tier\": \"Search Index Storage Low\"}\"\xbc\x01\n\x0cTrafficCosts\x12\x0c\n\x04\x63ost\x18\x01 \x01(\x01\x12\x10\n\x08incoming\x18\x02 \x01(\x01\x12\x10\n\x08outgoing\x18\x03 \x01(\x01\x12\x0c\n\x04tier\x18\x04 \x01(\t:l\x92\x41i\n\x0e*\x0cTrafficCosts2W\x12U{\"cost\": 0, \"incoming\": 500.456, \"outgoing\": 200.564, \"tier\": \"Network Traffic Free\"}\"\xaa\x02\n\x04\x43\x61rd\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x62rand\x18\x02 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x03 \x01(\t\x12\x10\n\x08\x65xpMonth\x18\x04 \x01(\x04\x12\x0f\n\x07\x65xpYear\x18\x05 \x01(\x04\x12\x10\n\x08lastFour\x18\x06 \x01(\t\x12\x11\n\tisDefault\x18\x07 \x01(\x08:\xad\x01\x92\x41\xa9\x01\n\x06*\x04\x43\x61rd2\x9e\x01\x12\x9b\x01{\"id\": \"card_1GhzeM2eZvKYlo2CrJT4qB4r\", \"brand\": \"American Express\", \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2021, \"last4\": \"8431\", \"isDefault\": true}*6\n\x0cTimeInterval\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\n\n\x06YEARLY\x10\x02\x42\x30\n\"com.strongsalt.strongdoc.sdk.protoB\x07\x42illing\x88\x01\x01\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _TIMEINTERVAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3233,
-  serialized_end=3287,
+  serialized_start=4505,
+  serialized_end=4559,
 )
 _sym_db.RegisterEnumDescriptor(_TIMEINTERVAL)
 
@@ -217,6 +217,247 @@ _GETBILLINGFREQUENCYLISTRESP = _descriptor.Descriptor(
 )
 
 
+_LISTCREDITCARDSREQ = _descriptor.Descriptor(
+  name='ListCreditCardsReq',
+  full_name='proto.ListCreditCardsReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1214,
+  serialized_end=1234,
+)
+
+
+_LISTCREDITCARDSRESP = _descriptor.Descriptor(
+  name='ListCreditCardsResp',
+  full_name='proto.ListCreditCardsResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='creditCardList', full_name='proto.ListCreditCardsResp.creditCardList', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222A\273\001\n\025*\023listCreditCardsResp2\241\001\022\236\001{\"creditCardList\": [{\"id\": \"card_1GhzeM2eZvKYlo2CrJT4qB4r\", \"brand\": \"American Express\", \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2021, \"last4\": \"8431\"}]}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1237,
+  serialized_end=1489,
+)
+
+
+_ADDPAYMENTMETHODREQ = _descriptor.Descriptor(
+  name='AddPaymentMethodReq',
+  full_name='proto.AddPaymentMethodReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pmID', full_name='proto.AddPaymentMethodReq.pmID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222AB\n\025*\023AddPaymentMethodReq2)\022\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1491,
+  serialized_end=1597,
+)
+
+
+_ADDPAYMENTMETHODRESP = _descriptor.Descriptor(
+  name='AddPaymentMethodResp',
+  full_name='proto.AddPaymentMethodResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pmID', full_name='proto.AddPaymentMethodResp.pmID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222AC\n\026*\024AddPaymentMethodResp2)\022\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1599,
+  serialized_end=1707,
+)
+
+
+_SETDEFAULTPAYMENTMETHODREQ = _descriptor.Descriptor(
+  name='SetDefaultPaymentMethodReq',
+  full_name='proto.SetDefaultPaymentMethodReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pmID', full_name='proto.SetDefaultPaymentMethodReq.pmID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222AI\n\034*\032SetDefaultPaymentMethodReq2)\022\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1709,
+  serialized_end=1829,
+)
+
+
+_SETDEFAULTPAYMENTMETHODRESP = _descriptor.Descriptor(
+  name='SetDefaultPaymentMethodResp',
+  full_name='proto.SetDefaultPaymentMethodResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pmID', full_name='proto.SetDefaultPaymentMethodResp.pmID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222AJ\n\035*\033SetDefaultPaymentMethodResp2)\022\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1831,
+  serialized_end=1953,
+)
+
+
+_REMOVEPAYMENTMETHODREQ = _descriptor.Descriptor(
+  name='RemovePaymentMethodReq',
+  full_name='proto.RemovePaymentMethodReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pmID', full_name='proto.RemovePaymentMethodReq.pmID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222AE\n\030*\026RemovePaymentMethodReq2)\022\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1955,
+  serialized_end=2067,
+)
+
+
+_REMOVEPAYMENTMETHODRESP = _descriptor.Descriptor(
+  name='RemovePaymentMethodResp',
+  full_name='proto.RemovePaymentMethodResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pmID', full_name='proto.RemovePaymentMethodResp.pmID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222AF\n\031*\027RemovePaymentMethodResp2)\022\'{\"pmID\": \"pm_1GiPe1FFYLtHE2OyZ6OfqGfS\"}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2069,
+  serialized_end=2183,
+)
+
+
 _SETNEXTBILLINGFREQUENCYREQ = _descriptor.Descriptor(
   name='SetNextBillingFrequencyReq',
   full_name='proto.SetNextBillingFrequencyReq',
@@ -250,8 +491,8 @@ _SETNEXTBILLINGFREQUENCYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1215,
-  serialized_end=1434,
+  serialized_start=2186,
+  serialized_end=2405,
 )
 
 
@@ -281,8 +522,8 @@ _SETNEXTBILLINGFREQUENCYRESP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1437,
-  serialized_end=1653,
+  serialized_start=2408,
+  serialized_end=2624,
 )
 
 
@@ -312,8 +553,8 @@ _GETLARGETRAFFICREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1655,
-  serialized_end=1715,
+  serialized_start=2626,
+  serialized_end=2686,
 )
 
 
@@ -357,8 +598,8 @@ _GETLARGETRAFFICRESP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1718,
-  serialized_end=2314,
+  serialized_start=2689,
+  serialized_end=3285,
 )
 
 
@@ -423,8 +664,8 @@ _TRAFFICDETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2317,
-  serialized_end=2455,
+  serialized_start=3288,
+  serialized_end=3426,
 )
 
 
@@ -468,8 +709,8 @@ _BILLINGFREQUENCY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2458,
-  serialized_end=2737,
+  serialized_start=3429,
+  serialized_end=3708,
 )
 
 
@@ -513,8 +754,8 @@ _DOCUMENTCOSTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2740,
-  serialized_end=2890,
+  serialized_start=3711,
+  serialized_end=3861,
 )
 
 
@@ -558,8 +799,8 @@ _SEARCHCOSTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2893,
-  serialized_end=3040,
+  serialized_start=3864,
+  serialized_end=4011,
 )
 
 
@@ -610,8 +851,81 @@ _TRAFFICCOSTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3043,
-  serialized_end=3231,
+  serialized_start=4014,
+  serialized_end=4202,
+)
+
+
+_CARD = _descriptor.Descriptor(
+  name='Card',
+  full_name='proto.Card',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='proto.Card.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='brand', full_name='proto.Card.brand', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='country', full_name='proto.Card.country', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expMonth', full_name='proto.Card.expMonth', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expYear', full_name='proto.Card.expYear', index=4,
+      number=5, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lastFour', full_name='proto.Card.lastFour', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='isDefault', full_name='proto.Card.isDefault', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'\222A\251\001\n\006*\004Card2\236\001\022\233\001{\"id\": \"card_1GhzeM2eZvKYlo2CrJT4qB4r\", \"brand\": \"American Express\", \"country\": \"US\", \"exp_month\": 5, \"exp_year\": 2021, \"last4\": \"8431\", \"isDefault\": true}',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4205,
+  serialized_end=4503,
 )
 
 _GETBILLINGDETAILSREQ.fields_by_name['at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -622,6 +936,7 @@ _GETBILLINGDETAILSRESP.fields_by_name['search'].message_type = _SEARCHCOSTS
 _GETBILLINGDETAILSRESP.fields_by_name['traffic'].message_type = _TRAFFICCOSTS
 _GETBILLINGDETAILSRESP.fields_by_name['billingFrequency'].message_type = _BILLINGFREQUENCY
 _GETBILLINGFREQUENCYLISTRESP.fields_by_name['billingFrequencyList'].message_type = _BILLINGFREQUENCY
+_LISTCREDITCARDSRESP.fields_by_name['creditCardList'].message_type = _CARD
 _SETNEXTBILLINGFREQUENCYREQ.fields_by_name['frequency'].enum_type = _TIMEINTERVAL
 _SETNEXTBILLINGFREQUENCYREQ.fields_by_name['validFrom'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _SETNEXTBILLINGFREQUENCYRESP.fields_by_name['nextBillingFrequency'].message_type = _BILLINGFREQUENCY
@@ -637,6 +952,14 @@ DESCRIPTOR.message_types_by_name['GetBillingDetailsReq'] = _GETBILLINGDETAILSREQ
 DESCRIPTOR.message_types_by_name['GetBillingDetailsResp'] = _GETBILLINGDETAILSRESP
 DESCRIPTOR.message_types_by_name['GetBillingFrequencyListReq'] = _GETBILLINGFREQUENCYLISTREQ
 DESCRIPTOR.message_types_by_name['GetBillingFrequencyListResp'] = _GETBILLINGFREQUENCYLISTRESP
+DESCRIPTOR.message_types_by_name['ListCreditCardsReq'] = _LISTCREDITCARDSREQ
+DESCRIPTOR.message_types_by_name['ListCreditCardsResp'] = _LISTCREDITCARDSRESP
+DESCRIPTOR.message_types_by_name['AddPaymentMethodReq'] = _ADDPAYMENTMETHODREQ
+DESCRIPTOR.message_types_by_name['AddPaymentMethodResp'] = _ADDPAYMENTMETHODRESP
+DESCRIPTOR.message_types_by_name['SetDefaultPaymentMethodReq'] = _SETDEFAULTPAYMENTMETHODREQ
+DESCRIPTOR.message_types_by_name['SetDefaultPaymentMethodResp'] = _SETDEFAULTPAYMENTMETHODRESP
+DESCRIPTOR.message_types_by_name['RemovePaymentMethodReq'] = _REMOVEPAYMENTMETHODREQ
+DESCRIPTOR.message_types_by_name['RemovePaymentMethodResp'] = _REMOVEPAYMENTMETHODRESP
 DESCRIPTOR.message_types_by_name['SetNextBillingFrequencyReq'] = _SETNEXTBILLINGFREQUENCYREQ
 DESCRIPTOR.message_types_by_name['SetNextBillingFrequencyResp'] = _SETNEXTBILLINGFREQUENCYRESP
 DESCRIPTOR.message_types_by_name['GetLargeTrafficReq'] = _GETLARGETRAFFICREQ
@@ -646,6 +969,7 @@ DESCRIPTOR.message_types_by_name['BillingFrequency'] = _BILLINGFREQUENCY
 DESCRIPTOR.message_types_by_name['DocumentCosts'] = _DOCUMENTCOSTS
 DESCRIPTOR.message_types_by_name['SearchCosts'] = _SEARCHCOSTS
 DESCRIPTOR.message_types_by_name['TrafficCosts'] = _TRAFFICCOSTS
+DESCRIPTOR.message_types_by_name['Card'] = _CARD
 DESCRIPTOR.enum_types_by_name['TimeInterval'] = _TIMEINTERVAL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -676,6 +1000,62 @@ GetBillingFrequencyListResp = _reflection.GeneratedProtocolMessageType('GetBilli
   # @@protoc_insertion_point(class_scope:proto.GetBillingFrequencyListResp)
   })
 _sym_db.RegisterMessage(GetBillingFrequencyListResp)
+
+ListCreditCardsReq = _reflection.GeneratedProtocolMessageType('ListCreditCardsReq', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCREDITCARDSREQ,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.ListCreditCardsReq)
+  })
+_sym_db.RegisterMessage(ListCreditCardsReq)
+
+ListCreditCardsResp = _reflection.GeneratedProtocolMessageType('ListCreditCardsResp', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCREDITCARDSRESP,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.ListCreditCardsResp)
+  })
+_sym_db.RegisterMessage(ListCreditCardsResp)
+
+AddPaymentMethodReq = _reflection.GeneratedProtocolMessageType('AddPaymentMethodReq', (_message.Message,), {
+  'DESCRIPTOR' : _ADDPAYMENTMETHODREQ,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.AddPaymentMethodReq)
+  })
+_sym_db.RegisterMessage(AddPaymentMethodReq)
+
+AddPaymentMethodResp = _reflection.GeneratedProtocolMessageType('AddPaymentMethodResp', (_message.Message,), {
+  'DESCRIPTOR' : _ADDPAYMENTMETHODRESP,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.AddPaymentMethodResp)
+  })
+_sym_db.RegisterMessage(AddPaymentMethodResp)
+
+SetDefaultPaymentMethodReq = _reflection.GeneratedProtocolMessageType('SetDefaultPaymentMethodReq', (_message.Message,), {
+  'DESCRIPTOR' : _SETDEFAULTPAYMENTMETHODREQ,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.SetDefaultPaymentMethodReq)
+  })
+_sym_db.RegisterMessage(SetDefaultPaymentMethodReq)
+
+SetDefaultPaymentMethodResp = _reflection.GeneratedProtocolMessageType('SetDefaultPaymentMethodResp', (_message.Message,), {
+  'DESCRIPTOR' : _SETDEFAULTPAYMENTMETHODRESP,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.SetDefaultPaymentMethodResp)
+  })
+_sym_db.RegisterMessage(SetDefaultPaymentMethodResp)
+
+RemovePaymentMethodReq = _reflection.GeneratedProtocolMessageType('RemovePaymentMethodReq', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEPAYMENTMETHODREQ,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.RemovePaymentMethodReq)
+  })
+_sym_db.RegisterMessage(RemovePaymentMethodReq)
+
+RemovePaymentMethodResp = _reflection.GeneratedProtocolMessageType('RemovePaymentMethodResp', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEPAYMENTMETHODRESP,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.RemovePaymentMethodResp)
+  })
+_sym_db.RegisterMessage(RemovePaymentMethodResp)
 
 SetNextBillingFrequencyReq = _reflection.GeneratedProtocolMessageType('SetNextBillingFrequencyReq', (_message.Message,), {
   'DESCRIPTOR' : _SETNEXTBILLINGFREQUENCYREQ,
@@ -740,10 +1120,24 @@ TrafficCosts = _reflection.GeneratedProtocolMessageType('TrafficCosts', (_messag
   })
 _sym_db.RegisterMessage(TrafficCosts)
 
+Card = _reflection.GeneratedProtocolMessageType('Card', (_message.Message,), {
+  'DESCRIPTOR' : _CARD,
+  '__module__' : 'billing_pb2'
+  # @@protoc_insertion_point(class_scope:proto.Card)
+  })
+_sym_db.RegisterMessage(Card)
+
 
 DESCRIPTOR._options = None
 _GETBILLINGDETAILSRESP._options = None
 _GETBILLINGFREQUENCYLISTRESP._options = None
+_LISTCREDITCARDSRESP._options = None
+_ADDPAYMENTMETHODREQ._options = None
+_ADDPAYMENTMETHODRESP._options = None
+_SETDEFAULTPAYMENTMETHODREQ._options = None
+_SETDEFAULTPAYMENTMETHODRESP._options = None
+_REMOVEPAYMENTMETHODREQ._options = None
+_REMOVEPAYMENTMETHODRESP._options = None
 _SETNEXTBILLINGFREQUENCYREQ._options = None
 _SETNEXTBILLINGFREQUENCYRESP._options = None
 _GETLARGETRAFFICRESP._options = None
@@ -751,4 +1145,5 @@ _BILLINGFREQUENCY._options = None
 _DOCUMENTCOSTS._options = None
 _SEARCHCOSTS._options = None
 _TRAFFICCOSTS._options = None
+_CARD._options = None
 # @@protoc_insertion_point(module_scope)

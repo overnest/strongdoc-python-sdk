@@ -35,9 +35,9 @@ class TestSDK(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Register Organizations
-        cls.org1_id, cls.org1_adminid = account._register_organization(ORG1_NAME, ADDRESS, ORG1_USER_NAME, 
+        cls.org1_id, cls.org1_adminid = account._register_organization(ORG1_NAME, ORG1_EMAIL, ADDRESS, ORG1_USER_NAME, 
             PASSWORD, ORG1_EMAIL, ORG1_SUB_TYPE, "")
-        cls.org2_id, cls.org2_adminid = account._register_organization(ORG2_NAME, ADDRESS, ORG2_USER_NAME, 
+        cls.org2_id, cls.org2_adminid = account._register_organization(ORG2_NAME, ORG2_EMAIL, ADDRESS, ORG2_USER_NAME, 
             PASSWORD, ORG2_EMAIL, ORG2_SUB_TYPE, "")
         
         # Login
@@ -64,9 +64,25 @@ class TestSDK(unittest.TestCase):
         self.assertTrue(isinstance(account_info.payments[0].amount, float))
         self.assertTrue(isinstance(account_info.payments[0].status, str))
 
-        self.assertTrue(isinstance(account_info.org_address, str))
+        self.assertEqual(account_info.org_email, ORG1_EMAIL)
+        self.assertEqual(account_info.org_address, ADDRESS)
         self.assertTrue(isinstance(account_info.multilevel_sharing, bool))
         self.assertTrue(isinstance(account_info.sharable_orgs, list))
+
+    def test_set_account_info(self):
+        new_email = "testorgchange@website.com"
+        new_address = "123 Test St."
+
+        success = account.set_account_info(TestSDK.org1_token, new_email, new_address)
+
+        self.assertTrue(success)
+
+        account_info = account.get_account_info(TestSDK.org1_token)
+
+        self.assertEqual(account_info.org_email, new_email)
+        self.assertEqual(account_info.org_address, new_address)
+
+        self.assertTrue(account.set_account_info(TestSDK.org1_token, ORG1_EMAIL, ADDRESS))
 
     def test_get_user_info(self):
         user_info = account.get_user_info(TestSDK.org1_token)
@@ -76,6 +92,28 @@ class TestSDK(unittest.TestCase):
         self.assertTrue(user_info.is_admin)
         self.assertEqual(user_info.userid, TestSDK.org1_adminid)
         self.assertEqual(user_info.orgid, TestSDK.org1_id)
+
+    def test_set_user_info(self):
+        new_name = "NewUserName"
+        new_email = "testuserchange@website.com"
+
+        success = account.set_user_info(TestSDK.org1_token, new_name, new_email)
+
+        self.assertTrue(success)
+
+        user_info = account.get_user_info(TestSDK.org1_token)
+
+        self.assertEqual(user_info.name, new_name)
+        self.assertEqual(user_info.email, new_email)
+
+        self.assertTrue(account.set_user_info(TestSDK.org1_token, ORG1_USER_NAME, ORG1_EMAIL))
+
+    def test_change_user_password(self):
+        new_password = "NewPassword"
+
+        self.assertTrue(account.change_user_password(TestSDK.org1_token, PASSWORD, new_password))
+
+        self.assertTrue(account.change_user_password(TestSDK.org1_token, new_password, PASSWORD))
 
     def test_register_remove_promote_demote_user(self):
         new_user_id = account.register_user(TestSDK.org1_token, NEW_USER_NAME, PASSWORD, NEW_USER_EMAIL, False)

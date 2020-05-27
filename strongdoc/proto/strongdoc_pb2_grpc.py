@@ -23,6 +23,11 @@ class StrongDocServiceStub(object):
         request_serializer=accounts__pb2.RegisterOrganizationReq.SerializeToString,
         response_deserializer=accounts__pb2.RegisterOrganizationResp.FromString,
         )
+    self.ReactivateOrganization = channel.unary_unary(
+        '/proto.StrongDocService/ReactivateOrganization',
+        request_serializer=accounts__pb2.RegisterOrganizationReq.SerializeToString,
+        response_deserializer=accounts__pb2.RegisterOrganizationResp.FromString,
+        )
     self.RemoveOrganization = channel.unary_unary(
         '/proto.StrongDocService/RemoveOrganization',
         request_serializer=accounts__pb2.RemoveOrganizationReq.SerializeToString,
@@ -143,6 +148,11 @@ class StrongDocServiceStub(object):
         request_serializer=accounts__pb2.SetMultiLevelSharingReq.SerializeToString,
         response_deserializer=accounts__pb2.SetMultiLevelSharingResp.FromString,
         )
+    self.SetAccountInfo = channel.unary_unary(
+        '/proto.StrongDocService/SetAccountInfo',
+        request_serializer=accounts__pb2.SetAccountInfoReq.SerializeToString,
+        response_deserializer=accounts__pb2.SetAccountInfoResp.FromString,
+        )
     self.GetBillingDetails = channel.unary_unary(
         '/proto.StrongDocService/GetBillingDetails',
         request_serializer=billing__pb2.GetBillingDetailsReq.SerializeToString,
@@ -173,6 +183,36 @@ class StrongDocServiceStub(object):
         request_serializer=accounts__pb2.GetUserInfoReq.SerializeToString,
         response_deserializer=accounts__pb2.GetUserInfoResp.FromString,
         )
+    self.ChangeUserPassword = channel.unary_unary(
+        '/proto.StrongDocService/ChangeUserPassword',
+        request_serializer=accounts__pb2.ChangeUserPasswordReq.SerializeToString,
+        response_deserializer=accounts__pb2.ChangeUserPasswordResp.FromString,
+        )
+    self.SetUserInfo = channel.unary_unary(
+        '/proto.StrongDocService/SetUserInfo',
+        request_serializer=accounts__pb2.SetUserInfoReq.SerializeToString,
+        response_deserializer=accounts__pb2.SetUserInfoResp.FromString,
+        )
+    self.ListCreditCards = channel.unary_unary(
+        '/proto.StrongDocService/ListCreditCards',
+        request_serializer=billing__pb2.ListCreditCardsReq.SerializeToString,
+        response_deserializer=billing__pb2.ListCreditCardsResp.FromString,
+        )
+    self.AddPaymentMethod = channel.unary_unary(
+        '/proto.StrongDocService/AddPaymentMethod',
+        request_serializer=billing__pb2.AddPaymentMethodReq.SerializeToString,
+        response_deserializer=billing__pb2.AddPaymentMethodResp.FromString,
+        )
+    self.SetDefaultPaymentMethod = channel.unary_unary(
+        '/proto.StrongDocService/SetDefaultPaymentMethod',
+        request_serializer=billing__pb2.SetDefaultPaymentMethodReq.SerializeToString,
+        response_deserializer=billing__pb2.SetDefaultPaymentMethodResp.FromString,
+        )
+    self.RemovePaymentMethod = channel.unary_unary(
+        '/proto.StrongDocService/RemovePaymentMethod',
+        request_serializer=billing__pb2.RemovePaymentMethodReq.SerializeToString,
+        response_deserializer=billing__pb2.RemovePaymentMethodResp.FromString,
+        )
 
 
 class StrongDocServiceServicer(object):
@@ -185,6 +225,17 @@ class StrongDocServiceServicer(object):
     The user who created the organization is automatically an administrator
 
     Does not require Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ReactivateOrganization(self, request, context):
+    """Reactivate an organization that was unsubscribed via aws
+
+    The user reactivating the organization becomes the administrator
+
+    Does not require login
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -460,6 +511,16 @@ class StrongDocServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def SetAccountInfo(self, request, context):
+    """Update the organization's account info
+
+    Requires Administrator privilege.
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def GetBillingDetails(self, request, context):
     """List all items of the cost breakdown and also other details such as the billing frequency
 
@@ -511,8 +572,66 @@ class StrongDocServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def GetUserInfo(self, request, context):
-    """Obtain information about logged user
+    """Obtain information about logged in user
 
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ChangeUserPassword(self, request, context):
+    """Change the password of a logged in user
+
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SetUserInfo(self, request, context):
+    """Set information about a logged in user
+
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListCreditCards(self, request, context):
+    """Obtain a list of the org's credit cards
+
+    Requires Administrator privilege
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AddPaymentMethod(self, request, context):
+    """Add a payment method to the customer and validate the payment method
+
+    Requires Administrator privilege
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def SetDefaultPaymentMethod(self, request, context):
+    """Set the default payment method for a stripe customer
+
+    Requires Administrator privilege
+    Requires Login
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def RemovePaymentMethod(self, request, context):
+    """Remove a payment method for a stripe customer
+
+    Requires Administrator privilege
     Requires Login
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -524,6 +643,11 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'RegisterOrganization': grpc.unary_unary_rpc_method_handler(
           servicer.RegisterOrganization,
+          request_deserializer=accounts__pb2.RegisterOrganizationReq.FromString,
+          response_serializer=accounts__pb2.RegisterOrganizationResp.SerializeToString,
+      ),
+      'ReactivateOrganization': grpc.unary_unary_rpc_method_handler(
+          servicer.ReactivateOrganization,
           request_deserializer=accounts__pb2.RegisterOrganizationReq.FromString,
           response_serializer=accounts__pb2.RegisterOrganizationResp.SerializeToString,
       ),
@@ -647,6 +771,11 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
           request_deserializer=accounts__pb2.SetMultiLevelSharingReq.FromString,
           response_serializer=accounts__pb2.SetMultiLevelSharingResp.SerializeToString,
       ),
+      'SetAccountInfo': grpc.unary_unary_rpc_method_handler(
+          servicer.SetAccountInfo,
+          request_deserializer=accounts__pb2.SetAccountInfoReq.FromString,
+          response_serializer=accounts__pb2.SetAccountInfoResp.SerializeToString,
+      ),
       'GetBillingDetails': grpc.unary_unary_rpc_method_handler(
           servicer.GetBillingDetails,
           request_deserializer=billing__pb2.GetBillingDetailsReq.FromString,
@@ -676,6 +805,36 @@ def add_StrongDocServiceServicer_to_server(servicer, server):
           servicer.GetUserInfo,
           request_deserializer=accounts__pb2.GetUserInfoReq.FromString,
           response_serializer=accounts__pb2.GetUserInfoResp.SerializeToString,
+      ),
+      'ChangeUserPassword': grpc.unary_unary_rpc_method_handler(
+          servicer.ChangeUserPassword,
+          request_deserializer=accounts__pb2.ChangeUserPasswordReq.FromString,
+          response_serializer=accounts__pb2.ChangeUserPasswordResp.SerializeToString,
+      ),
+      'SetUserInfo': grpc.unary_unary_rpc_method_handler(
+          servicer.SetUserInfo,
+          request_deserializer=accounts__pb2.SetUserInfoReq.FromString,
+          response_serializer=accounts__pb2.SetUserInfoResp.SerializeToString,
+      ),
+      'ListCreditCards': grpc.unary_unary_rpc_method_handler(
+          servicer.ListCreditCards,
+          request_deserializer=billing__pb2.ListCreditCardsReq.FromString,
+          response_serializer=billing__pb2.ListCreditCardsResp.SerializeToString,
+      ),
+      'AddPaymentMethod': grpc.unary_unary_rpc_method_handler(
+          servicer.AddPaymentMethod,
+          request_deserializer=billing__pb2.AddPaymentMethodReq.FromString,
+          response_serializer=billing__pb2.AddPaymentMethodResp.SerializeToString,
+      ),
+      'SetDefaultPaymentMethod': grpc.unary_unary_rpc_method_handler(
+          servicer.SetDefaultPaymentMethod,
+          request_deserializer=billing__pb2.SetDefaultPaymentMethodReq.FromString,
+          response_serializer=billing__pb2.SetDefaultPaymentMethodResp.SerializeToString,
+      ),
+      'RemovePaymentMethod': grpc.unary_unary_rpc_method_handler(
+          servicer.RemovePaymentMethod,
+          request_deserializer=billing__pb2.RemovePaymentMethodReq.FromString,
+          response_serializer=billing__pb2.RemovePaymentMethodResp.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
