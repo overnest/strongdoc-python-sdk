@@ -190,16 +190,15 @@ class TestSDK(unittest.TestCase):
         self.assertTrue(isinstance(response.traffic.tier, str))
 
         self.check_billing_frequency(response.billing_frequency)
-
-        response = billing.get_billing_frequency_list(TestSDK.org1_token)
-
-        self.check_billing_frequency(response[0])
     
+    """
     def test_get_billing_frequency_list(self):
         response = billing.get_billing_frequency_list(TestSDK.org1_token)
 
         self.check_billing_frequency(response[0])
+    """
 
+    """
     def test_set_next_billing_frequency(self):
         new_time = datetime.utcnow() + timedelta(days=30)
         new_time = datetime(new_time.year, new_time.month, 1, tzinfo=timezone.utc)
@@ -209,6 +208,7 @@ class TestSDK(unittest.TestCase):
 
         billing_frequency = billing.set_next_billing_frequency(TestSDK.org1_token, billing.FREQ_MONTHLY, new_time)
         self.check_billing_frequency(billing_frequency)
+    """
 
     def test_get_large_traffic(self):
         response = billing.get_large_traffic(TestSDK.org1_token)

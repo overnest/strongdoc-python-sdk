@@ -225,7 +225,7 @@ def get_billing_details(token, at_time=None):
 
         return BillingDetails(response)
 
-def get_billing_frequency_list(token):
+#def get_billing_frequency_list(token):
     """
     Gets a list of billing frequencies.
     This requires an administrator privilege.
@@ -243,7 +243,7 @@ def get_billing_frequency_list(token):
     :rtype:
         list(BillingFrequency)
     """
-
+    """
     with client.connect_to_server_with_auth(token) as auth_conn:
         client_stub = strongdoc_pb2_grpc.StrongDocServiceStub(auth_conn)
 
@@ -252,8 +252,9 @@ def get_billing_frequency_list(token):
         response = client_stub.GetBillingFrequencyList(request, timeout=constants.GRPC_TIMEOUT)
 
         return [BillingFrequency(freq) for freq in response.billingFrequencyList]
-
-def set_next_billing_frequency(token, frequency, valid_from):
+    """
+    
+#def set_next_billing_frequency(token, frequency, valid_from):
     """
     Sets a new billing frequency to begin at the specified time.
     This is not allowed if you are subscribed using AWS, and will raise an error.
@@ -286,7 +287,7 @@ def set_next_billing_frequency(token, frequency, valid_from):
     :raises ValueError:
         If `frequency` is not a valid billing frequency constant or `valid_from` is not a valid datetime.
     """
-
+    """
     try:
         freq = _TimeInterval[frequency].value
     except KeyError:
@@ -312,6 +313,7 @@ def set_next_billing_frequency(token, frequency, valid_from):
                 raise err
 
         return BillingFrequency(response.nextBillingFrequency)
+    """
 
 def get_large_traffic(token, at_time=None):
     """
